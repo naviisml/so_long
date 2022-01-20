@@ -39,6 +39,7 @@ int	window_err(s_server *so_long, char *error)
  */
 int	window_destroy(s_server *so_long)
 {
-	mlx_destroy_window(so_long->mlx, so_long->window);
+	if (so_long->mlx && so_long->window)
+		mlx_destroy_window(so_long->mlx, so_long->window);
 	return (0);
 }
