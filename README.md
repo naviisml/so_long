@@ -63,10 +63,43 @@ git submodule update
 make all
 ```
 
+```
+./so_long <path/to/map.ber>
+```
+
 ### Debian/Ubuntu
 
 ```
 make all -f Makefile.linux
+```
+
+```
+./so_long <path/to/map.ber>
+```
+
+## Map
+
+The maps used for this game must be made with the following rules in mind;
+- Map must be rectangular
+- Map must contain one exit
+- Map must contain one collectible
+- Map must contain one starting position
+- Map must be surrounded by walls
+- Map can be composed of only these 5 characters:
+	- 0 for an empty space
+	- 1 for a wall
+	- C for a collectible
+	- E for a map exit
+	- P for the player’s starting position
+
+**Simple example**
+
+```
+1111111111111
+10010000000C1
+1000011111001
+1P0011E000001
+1111111111111
 ```
 
 <div align=center>Made with tons of ☕ and ❤️ by <a href="https://github.com/naviisml">Navi</a></div>
