@@ -52,5 +52,6 @@ typedef struct t_server {
 int	map_parse(s_server *so_long);
 int	window_create(s_server *so_long);
 int	window_destroy(s_server *so_long);
+int	window_err(s_server *so_long, char *error);
 
 #endif
