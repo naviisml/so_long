@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/20 14:16:18 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/20 14:28:41 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ static int	map_check_file(s_server *so_long)
 	n = 4;
 	so_long->map->fd = open(filename, O_RDWR);
 	if (so_long->map->fd < 0)
-		return(window_err(so_long, "File doesnt exist"));
+		return (window_err(so_long, "File doesnt exist"));
 	while (n > 0 && filename[len - n] == *ext && filename[len - n] != '\0')
 	{
 		ext++;
 		n--;
 	}
 	if (n > 0)
-		return(window_err(so_long, "Invalid extension"));
+		return (window_err(so_long, "Invalid extension"));
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/20 14:16:25 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/20 14:28:28 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ int	main(int argc, char **argv)
 	char		*map;
 
 	if (argc != 2)
-		return(window_err(&so_long, "No map"));
+		return (window_err(&so_long, "No map"));
 	map = argv[1];
 	initialize(&so_long, map);
 	if (map_parse(&so_long) == 0)
-		return(0);
+		return (0);
 	window_create(&so_long);
 	mlx_hook(so_long.window, 2, (1L << 0), window_destroy, &so_long);
 	mlx_loop(so_long.mlx);
