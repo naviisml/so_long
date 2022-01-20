@@ -36,23 +36,23 @@ git submodule update
 
 ### Debian/Ubuntu
 
-**Step 1. Install this repository**
+**Step 1. Installing the dependencies**
+
+```
+sudo apt-get install gcc make xorg libxext-dev libbsd-dev
+```
+
+**Step 2. Install this repository**
 
 ```
 git clone https://github.com/naviisml/so_long.git
 ```
 
-**Step 2. Add the submodules**
+**Step 3. Add the submodules**
 
 ```
 git submodule init
 git submodule update
-```
-
-**Step 3. Installing the dependencies**
-
-```
-sudo apt-get install gcc make xorg libxext-dev libbsd-dev
 ```
 
 ## Usage
