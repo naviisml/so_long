@@ -1,0 +1,83 @@
+NAME = example_program
+
+AR = @ar
+AR_FLAGS = -rcs
+
+COMPILER = @gcc
+COMPILER_FLAGS = -Wall -Werror -Wextra -I/usr/include -Imlx_linux -Iincludes/ -O3
+COMPILER_LIBRARIES = -L$(MINILIBX_FOLDER) -L/usr/lib -I$(MINILIBX_FOLDER) -lXext -lX11 -lm -lz
+
+# Configuration...
+
+# Libft...
+LIBFT			=	libft.a
+LIBFT_FOLDER	=	./libraries/libft
+
+# Minilibx
+MINILIBX		=	libmlx.a
+MINILIBX_FOLDER	=	./libraries/minilibx_linux
+
+# libmlx.a libmlx.dylib
+
+# Build Folder
+BUILD_FOLDER	=	./build
+BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
+					$(addprefix $(BUILD_FOLDER)/, $(MINILIBX))
+
+# Source Files...
+SOURCE_FOLDER	=	./srcs
+SOURCE_FILES	=	utilities/x11_window.c \
+					ft_example.c
+
+# Object Files...
+EXTRA_FOLDERS	=	$(SOURCE_FOLDER)
+OBJECT_FOLDER	=	./objects
+OBJECT_FILES	=	$(addprefix $(OBJECT_FOLDER)/, $(addprefix $(SOURCE_FOLDER)/, $(SOURCE_FILES:.c=.o)))
+
+.PHONY =  $(NAME) $(LIBFT) all clean fclean re dev
+
+# Compile the .c files to .o files...
+$(OBJECT_FOLDER)/%.o: %.c
+	@mkdir -p $(OBJECT_FOLDER) $(addprefix $(OBJECT_FOLDER)/, $(dir $<))
+	@echo "Compiling \t$(notdir $<) (100%)"
+	@$(COMPILER) $(COMPILER_FLAGS) -I/usr/include -I$(MINILIBX_FOLDER) -O3 -c $< -o $@
+
+# Compile the program...
+$(NAME): $(LIBFT) $(MINILIBX) $(OBJECT_FILES)
+	@echo "Building \t$(NAME)... (100%)"
+	$(COMPILER) $(COMPILER_FLAGS) $(OBJECT_FILES) $(BUILD_FILES) $(COMPILER_LIBRARIES) -o $(NAME)
+
+# Compile a LIBFT...
+$(LIBFT):
+	@echo "Compiling \t$(LIBFT)..."
+	@$(MAKE) all -C $(LIBFT_FOLDER)
+	@mkdir -p $(BUILD_FOLDER)
+	@mv $(addprefix $(LIBFT_FOLDER)/, $(LIBFT)) $(addprefix $(BUILD_FOLDER)/, $(LIBFT))
+
+# Compile minilibx
+$(MINILIBX):
+	@echo "Compiling \t$(MINILIBX)..."
+	@$(MAKE) -C $(MINILIBX_FOLDER)
+	@$(MAKE) all -C $(MINILIBX_FOLDER) -f Makefile.gen
+	@mkdir -p $(BUILD_FOLDER)
+	@mv $(addprefix $(MINILIBX_FOLDER)/, $(MINILIBX)) $(addprefix $(BUILD_FOLDER)/, $(MINILIBX))
+
+all: $(NAME)
+
+# Remove the `object` folder and files...
+clean:
+	@$(MAKE) clean -C $(LIBFT_FOLDER)
+	@rm -rf $(OBJECT_FILES) $(OBJECT_FOLDER)
+
+# Remove the `object` and `build` folder and files...
+fclean: clean
+	@$(MAKE) fclean -C $(LIBFT_FOLDER)
+	@rm -rf $(NAME) $(BUILD_FOLDER)
+
+# Clean the program up and re-compile it...
+re: fclean all
+
+# Re-compile the program and run the script...
+dev: all
+	@echo "Executing \t$(NAME)"
+	@./$(NAME)

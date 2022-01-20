@@ -1,0 +1,9 @@
+[submodule "libraries/libft"]
+	path = libraries/libft
+	url = https://github.com/naviisml/libft.git
+[submodule "libraries/minilibx_linux"]
+	path = libraries/minilibx_linux
+	url = https://github.com/naviisml/minilibx_linux.git
+[submodule "libraries/minilibx_macos"]
+	path = libraries/minilibx_macos
+	url = https://github.com/naviisml/minilibx_macos.git

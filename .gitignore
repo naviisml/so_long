@@ -1,0 +1,7 @@
+# Folders
+objects/
+build/
+
+# Files
+*.DS_Store
+libmlx.dylib
