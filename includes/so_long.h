@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/20 13:44:30 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/20 14:13:20 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <libft.h>
 # include <mlx.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 enum {
 	ON_KEYDOWN = 2,
@@ -27,16 +29,18 @@ enum {
 };
 
 typedef struct t_map {
+	char	*file;
+	int		fd;
 	int		collectibles;
 	int		**spawnpos;
 	char	**structure;
-}	s_map;
+}			s_map;
 
 typedef struct t_client {
 	int		x;
 	int		y;
 	int		collected;
-}	s_client;
+}			s_client;
 
 typedef struct t_server {
 	void		*mlx;
