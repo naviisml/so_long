@@ -1,6 +1,10 @@
-# C Minilibx Boilerplate
+# so_long
 
-This is a C Boilerplate for my future C projects on Codam using Minilibx. This boilerplate allows me to start projects swiftly with a pre-made template.
+This project is a very small 2D game. Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements.
+
+## Features
+
+- ???
 
 ## Requirements
 
@@ -20,7 +24,7 @@ This is a C Boilerplate for my future C projects on Codam using Minilibx. This b
 **Step 1. Install this repository**
 
 ```
-git clone https://github.com/naviisml/c-minilibx-boilerplate.git
+git clone https://github.com/naviisml/so_long.git
 ```
 
 **Step 2. Add the submodules**
@@ -35,7 +39,7 @@ git submodule update
 **Step 1. Install this repository**
 
 ```
-git clone https://github.com/naviisml/c-minilibx-boilerplate.git
+git clone https://github.com/naviisml/so_long.git
 ```
 
 **Step 2. Add the submodules**
