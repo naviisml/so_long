@@ -27,6 +27,7 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 # Source Files...
 SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/x11window.c \
+					map.c \
 					so_long.c
 
 # Object Files...
@@ -80,4 +81,4 @@ re: fclean all
 # Re-compile the program and run the script...
 dev: all
 	@echo "Executing \t$(NAME)"
-	@./$(NAME) resources/simple_map.ber
+	@./$(NAME) ./resources/simple_map.ber

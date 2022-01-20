@@ -49,6 +49,7 @@ typedef struct t_server {
 	s_client	*client;
 }				s_server;
 
+int	map_parse(s_server *so_long);
 int	window_create(s_server *so_long);
 int	window_destroy(s_server *so_long);
 

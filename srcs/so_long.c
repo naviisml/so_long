@@ -43,6 +43,8 @@ int	main(int argc, char **argv)
 		return(window_err(&so_long, "No map"));
 	map = argv[1];
 	initialize(&so_long, map);
+	if (map_parse(&so_long) == 0)
+		return(0);
 	window_create(&so_long);
 	mlx_hook(so_long.window, 2, (1L << 0), window_destroy, &so_long);
 	mlx_loop(so_long.mlx);
