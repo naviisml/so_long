@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:19:02 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:28:44 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct t_server {
 	s_client	*client;
 }				s_server;
 
+void	bootstrapper(s_server *so_long, char *map);
 void	initialize_client(s_server *so_long);
 void	initialize_server(s_server *so_long);
 void	initialize_map(s_server *so_long, char *map);

@@ -34,7 +34,7 @@ SOURCE_FILES	=	utilities/color.c \
 					modules/map_parser.c \
 					modules/events.c \
 					scripts/window.c \
-					autorun/helpers.c \
+					autorun/bootstrapper.c \
 					autorun/so_long.c
 
 # Object Files...

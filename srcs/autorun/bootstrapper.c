@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.c                                          :+:    :+:            */
+/*   bootstrapper.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:28:23 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:28:09 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 /**
- * so_long ...
+ * The bootstrapper() function ...
  */
-int	main(int argc, char **argv)
+void	bootstrapper(s_server *so_long, char *map)
 {
-	s_server	so_long;
-
-	if (argc != 2)
-		return (ft_puterror(&so_long, "No map specified."));
-	bootstrapper(&so_long, argv[1]);
-	mlx_loop(so_long.mlx);
-	return (0);
+	initialize_server(so_long);
+	initialize_client(so_long);
+	initialize_map(so_long, map);
+	events_initialize(so_long);
 }
