@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:18:11 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:34:00 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * The event_check() function ...
  */
-int	events_loop()
+int	events_loop(void)
 {
 	return (1);
 }
