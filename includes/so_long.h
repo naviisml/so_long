@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:28:44 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:33:02 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,10 @@ int		window_create(s_server *so_long);
 int		window_destroy(s_server *so_long);
 int		ft_puterror(s_server *so_long, char *error);
 int		events_initialize(s_server *so_long);
+int		rgba(int r, int g, int b, int a);
+int		get_alpha(int rgba);
+int		get_red(int rgba);
+int		get_green(int rgba);
+int		get_blue(int rgba);
 
 #endif
