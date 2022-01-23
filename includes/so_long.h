@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/20 14:13:20 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 21:07:12 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,13 @@ typedef struct t_server {
 	s_client	*client;
 }				s_server;
 
-int	map_parse(s_server *so_long);
-int	window_create(s_server *so_long);
-int	window_destroy(s_server *so_long);
-int	window_err(s_server *so_long, char *error);
+void	initialize_client(s_server *so_long);
+void	initialize_server(s_server *so_long);
+void	initialize_map(s_server *so_long, char *map);
+int		map_open(s_server *so_long);
+int		map_parse(s_server *so_long);
+int		window_create(s_server *so_long);
+int		window_destroy(s_server *so_long);
+int		window_err(s_server *so_long, char *error);
 
 #endif

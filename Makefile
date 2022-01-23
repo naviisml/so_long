@@ -26,9 +26,14 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 
 # Source Files...
 SOURCE_FOLDER	=	./srcs
-SOURCE_FILES	=	utilities/x11window.c \
-					map.c \
-					so_long.c
+SOURCE_FILES	=	utilities/color.c \
+					utilities/get_next_line.c \
+					properties/server.c \
+					properties/client.c \
+					properties/map.c \
+					modules/map_parser.c \
+					modules/window.c \
+					autorun/so_long.c
 
 # Object Files...
 EXTRA_FOLDERS	=	$(SOURCE_FOLDER)
