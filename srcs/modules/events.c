@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.c                                          :+:    :+:            */
+/*   events.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:20:06 by nismail       ########   odam.nl         */
+/*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
+/*   Updated: 2022/01/23 22:18:11 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 /**
- * so_long ...
+ * The event_check() function ...
  */
-int	main(int argc, char **argv)
+int	events_loop()
 {
-	s_server	so_long;
+	return (1);
+}
 
-	if (argc != 2)
-		return (ft_puterror(&so_long, "No map"));
-	initialize_server(&so_long);
-	initialize_client(&so_long);
-	initialize_map(&so_long, argv[1]);
-	window_create(&so_long);
-	events_initialize(&so_long);
-	mlx_loop(so_long.mlx);
-	return (0);
+/**
+ * The event_execute() function ...
+ */
+int	events_initialize(s_server *so_long)
+{
+	mlx_hook(so_long->window, 2, (1L << 0), window_destroy, so_long);
+	return (1);
 }

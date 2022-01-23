@@ -32,6 +32,7 @@ SOURCE_FILES	=	utilities/color.c \
 					properties/client.c \
 					properties/map.c \
 					modules/map_parser.c \
+					modules/events.c \
 					scripts/window.c \
 					autorun/developer_functions.c \
 					autorun/so_long.c
