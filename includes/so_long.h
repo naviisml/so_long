@@ -6,12 +6,12 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:33:02 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:36:28 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_EXAMPLE_H
-# define FT_EXAMPLE_H
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
 # include <libft.h>
 # include <mlx.h>
@@ -28,37 +28,37 @@ enum {
 	ON_DESTROY = 17
 };
 
-typedef struct t_map {
+typedef struct s_map {
 	char	*file;
 	int		fd;
 	int		collectibles;
 	int		**spawnpos;
 	char	**structure;
-}			s_map;
+}			t_map;
 
-typedef struct t_client {
+typedef struct s_client {
 	int		x;
 	int		y;
 	int		collected;
-}			s_client;
+}			t_client;
 
-typedef struct t_server {
+typedef struct s_server {
 	void		*mlx;
 	void		*window;
-	s_map		*map;
-	s_client	*client;
-}				s_server;
+	t_map		*map;
+	t_client	*client;
+}				t_server;
 
-void	bootstrapper(s_server *so_long, char *map);
-void	initialize_client(s_server *so_long);
-void	initialize_server(s_server *so_long);
-void	initialize_map(s_server *so_long, char *map);
-int		map_open(s_server *so_long);
-int		map_parse(s_server *so_long);
-int		window_create(s_server *so_long);
-int		window_destroy(s_server *so_long);
-int		ft_puterror(s_server *so_long, char *error);
-int		events_initialize(s_server *so_long);
+void	bootstrapper(t_server *so_long, char *map);
+void	initialize_client(t_server *so_long);
+void	initialize_server(t_server *so_long);
+void	initialize_map(t_server *so_long, char *map);
+int		map_open(t_server *so_long);
+int		map_parse(t_server *so_long);
+int		window_create(t_server *so_long);
+int		window_destroy(t_server *so_long);
+int		ft_puterror(t_server *so_long, char *error);
+int		events_initialize(t_server *so_long);
 int		rgba(int r, int g, int b, int a);
 int		get_alpha(int rgba);
 int		get_red(int rgba);

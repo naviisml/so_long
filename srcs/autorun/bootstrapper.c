@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:28:09 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:35:31 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * The bootstrapper() function ...
  */
-void	bootstrapper(s_server *so_long, char *map)
+void	bootstrapper(t_server *so_long, char *map)
 {
 	initialize_server(so_long);
 	initialize_client(so_long);

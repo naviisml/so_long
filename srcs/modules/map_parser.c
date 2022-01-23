@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:20:02 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:35:47 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /**
  * The map_open() function ..
  */
-int	map_open(s_server *so_long)
+int	map_open(t_server *so_long)
 {
 	int		len;
 	int		n;
@@ -50,7 +50,7 @@ int	map_open(s_server *so_long)
  * 		- True: Execute the function accosiated with the character
  * 		- False: Move on
  */
-int	map_parse(s_server *so_long)
+int	map_parse(t_server *so_long)
 {
 	char	*line;
 
@@ -74,7 +74,7 @@ int	map_parse(s_server *so_long)
  * 4. Check if P, and E exists
  * 5. Check if there is minimum x collectibles 
  */
-int	map_check(s_server *so_long)
+int	map_check(t_server *so_long)
 {
 	if (so_long->map->spawnpos != NULL)
 		return (0);

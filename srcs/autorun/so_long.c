@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:28:23 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:35:36 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  */
 int	main(int argc, char **argv)
 {
-	s_server	so_long;
+	t_server	so_long;
 
 	if (argc != 2)
 		return (ft_puterror(&so_long, "No map specified."));
