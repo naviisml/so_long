@@ -28,6 +28,7 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/color.c \
 					utilities/get_next_line.c \
+					utilities/helpers.c \
 					properties/server.c \
 					properties/client.c \
 					properties/map.c \
