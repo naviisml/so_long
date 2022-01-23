@@ -6,16 +6,15 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 04:14:45 by nismail       #+#    #+#                 */
-/*   Updated: 2021/12/06 02:13:58 by navi          ########   odam.nl         */
+/*   Updated: 2022/01/23 22:32:24 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <get_next_line.h>
 
 /*
  * The find_next_line() function ...
  */
-
 static int	find_next_line(char *data)
 {
 	int	i;
@@ -36,7 +35,6 @@ static int	find_next_line(char *data)
 /*
  * The read_next_line() function ...
  */
-
 static char	*read_next_line(char *data)
 {
 	int		i;
@@ -64,7 +62,6 @@ static char	*read_next_line(char *data)
 /*
  * The move_next_line() function ...
  */
-
 static char	*move_next_line(char *data)
 {
 	char	*tmp;
@@ -94,7 +91,6 @@ static char	*move_next_line(char *data)
 /*
  * The read_file() function ...
  */
-
 static char	*open_file(int fd, char *data)
 {
 	char	*fdata;
