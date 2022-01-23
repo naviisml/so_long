@@ -24,17 +24,6 @@ int	window_create(s_server *so_long)
 	return (1);
 }
 
-/**
- * The window_err() function ..
- */
-int	window_err(s_server *so_long, char *error)
-{
-	ft_putstr_fd("Error\n", 0);
-	if (error != NULL)
-		ft_putstr_fd(error, 0);
-	window_destroy(so_long);
-	return (0);
-}
 
 /**
  * The window_destroy() function ..

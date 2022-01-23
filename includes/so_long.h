@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 21:07:12 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/23 22:19:02 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		map_open(s_server *so_long);
 int		map_parse(s_server *so_long);
 int		window_create(s_server *so_long);
 int		window_destroy(s_server *so_long);
-int		window_err(s_server *so_long, char *error);
+int		ft_puterror(s_server *so_long, char *error);
+int		events_initialize(s_server *so_long);
 
 #endif
