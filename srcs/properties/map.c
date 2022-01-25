@@ -23,3 +23,15 @@ void	map_initialize(t_server *so_long)
 	so_long->map->spawnpos = NULL;
 	so_long->map->structure = NULL;
 }
+
+/**
+ * The map_initialize() function ..
+ */
+void	map_deinitialize(t_server *so_long)
+{
+	if (so_long->map->structure != NULL)
+		free(so_long->map->structure);
+		// Free so_long->map->structure from back to start
+	if (so_long->map != NULL)
+		free(so_long->map);
+}

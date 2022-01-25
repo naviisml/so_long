@@ -58,11 +58,13 @@ typedef struct s_events {
 
 void	server_initialize(t_server *so_long);
 void	client_initialize(t_server *so_long);
+void	client_deinitialize(t_server *so_long);
 void	game_start(t_server *so_long);
 int		game_error(t_server *so_long, char *error);
 int		game_destroy(int keycode, t_server *so_long);
 void	map_initialize(t_server *so_long, char *map);
 int		map_open(t_server *so_long);
+void	map_deinitialize(t_server *so_long);
 int		events_loop(int keycode, t_server *so_long);
 int		rgba(int r, int g, int b, int a);
 int		get_alpha(int rgba);
