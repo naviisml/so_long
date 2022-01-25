@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 20:59:28 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 22:03:35 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 /**
  * The map_initialize() function ..
  */
-void	map_initialize(t_server *so_long, char *map)
+void	map_initialize(t_server *so_long)
 {
 	so_long->map = malloc(sizeof(struct s_map));
-	so_long->map->file = map;
 	so_long->map->fd = 0;
 	so_long->map->collectibles = 0;
 	so_long->map->spawnpos = NULL;
 	so_long->map->structure = NULL;
-	map_open(so_long);
 }
