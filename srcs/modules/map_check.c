@@ -6,11 +6,12 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:02:00 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 22:24:38 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+#include <stdio.h>
 
 /**
  * The map_ext() function ..
@@ -24,13 +25,15 @@ static int	map_ext(char *filename)
 	ext = ".ber";
 	i = ft_strlen(ext);
 	pos = ft_strlen(filename);
-	while (i > 0 && ext[i] && filename[pos])
+	while (i >= 0)
 	{
 		if (ext[i] != filename[pos])
-			return (0);
+			break ;
 		pos--;
 		i--;
 	}
+	if (i >= 0)
+		return (0);
 	return (1);
 }
 
@@ -54,9 +57,9 @@ static int	map_exists(t_server *so_long, char *filename)
  */
 int	map_check(t_server *so_long, char *filename)
 {
+	if (map_exists(so_long, filename) == 0)
+		return (game_error(so_long, "File doesnt exist"));
 	if (map_ext(filename) == 0)
 		return (game_error(so_long, "Invalid extension"));
-	else if (map_exists(so_long, filename) == 0)
-		return (game_error(so_long, "File doesnt exist"));
 	return (1);
 }

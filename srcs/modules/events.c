@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 21:57:16 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 22:10:32 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /**
  * The g_key_events struct ...
  */
-t_events g_key_events[] = {
-	{53, game_destroy}
+t_events	g_key_events[] = {
+{53, game_destroy}
 };
 
 /**
