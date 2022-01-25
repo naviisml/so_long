@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:36:28 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 21:00:05 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,25 @@ typedef struct s_client {
 typedef struct s_server {
 	void		*mlx;
 	void		*window;
+	int			width;
+	int			height;
 	t_map		*map;
 	t_client	*client;
 }				t_server;
 
-void	bootstrapper(t_server *so_long, char *map);
-void	initialize_client(t_server *so_long);
-void	initialize_server(t_server *so_long);
-void	initialize_map(t_server *so_long, char *map);
+typedef struct s_events {
+	char		keycode;
+	int			(*callback)();
+}				t_events;
+
+void	server_initialize(t_server *so_long);
+void	client_initialize(t_server *so_long);
+void	game_start(t_server *so_long);
+int		game_error(t_server *so_long, char *error);
+int		game_destroy(int keycode, t_server *so_long);
+void	map_initialize(t_server *so_long, char *map);
 int		map_open(t_server *so_long);
-int		map_parse(t_server *so_long);
-int		window_create(t_server *so_long);
-int		window_destroy(t_server *so_long);
-int		ft_puterror(t_server *so_long, char *error);
-int		events_initialize(t_server *so_long);
+int		events_loop(int keycode, t_server *so_long);
 int		rgba(int r, int g, int b, int a);
 int		get_alpha(int rgba);
 int		get_red(int rgba);

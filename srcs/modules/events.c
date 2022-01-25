@@ -6,25 +6,42 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:35:39 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 20:54:38 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+#include <stdio.h>
+
+/**
+ * The g_key_events struct ...
+ */
+t_events g_key_events[] = {
+	{53, game_destroy}
+};
 
 /**
  * The event_check() function ...
  */
-int	events_loop(void)
+int	events_loop(int keycode, t_server *so_long)
 {
-	return (1);
-}
+	int	i;
+	int	res;
 
-/**
- * The event_execute() function ...
- */
-int	events_initialize(t_server *so_long)
-{
-	mlx_hook(so_long->window, 2, (1L << 0), window_destroy, so_long);
-	return (1);
+	i = 0;
+	res = 1;
+	while (g_key_events[i].callback != NULL)
+	{
+		if (g_key_events[i].keycode == keycode)
+		{
+			res = g_key_events[i].callback(keycode, so_long);
+			break ;
+		}
+		else
+		{
+			printf("[DEBUG] No bind on: %d \n", keycode);
+		}
+		i++;
+	}
+	return (res);
 }

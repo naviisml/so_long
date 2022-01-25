@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   window.c                                           :+:    :+:            */
+/*   so_long.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:36:01 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 20:59:37 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 /**
- * The window_destroy() function ..
+ * so_long ...
  */
-int	window_destroy(t_server *so_long)
+int	main(int argc, char **argv)
 {
-	mlx_destroy_window(so_long->mlx, so_long->window);
-	return (0);
+	t_server	so_long;
+
+	if (argc != 2)
+		return (game_error(&so_long, "No map specified."));
+	server_initialize(&so_long);
+	client_initialize(&so_long);
+	map_initialize(&so_long, argv[1]);
+	game_start(&so_long);
+	mlx_hook(so_long.window, 2, (1L << 17), events_loop, &so_long);
+	mlx_loop(so_long.mlx);
 }

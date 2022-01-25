@@ -28,15 +28,13 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/color.c \
 					utilities/get_next_line.c \
-					utilities/helpers.c \
 					properties/server.c \
 					properties/client.c \
 					properties/map.c \
 					modules/map_parser.c \
 					modules/events.c \
-					scripts/window.c \
-					autorun/bootstrapper.c \
-					autorun/so_long.c
+					modules/game.c \
+					so_long.c
 
 # Object Files...
 EXTRA_FOLDERS	=	$(SOURCE_FOLDER)

@@ -6,16 +6,16 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:36:45 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 20:59:28 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 /**
- * The initialize_map() function ..
+ * The map_initialize() function ..
  */
-void	initialize_map(t_server *so_long, char *map)
+void	map_initialize(t_server *so_long, char *map)
 {
 	so_long->map = malloc(sizeof(struct s_map));
 	so_long->map->file = map;

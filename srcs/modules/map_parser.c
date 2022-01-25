@@ -6,40 +6,12 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:35:47 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 21:03:31 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 #include <get_next_line.h>
-
-/**
- * The map_open() function ..
- */
-int	map_open(t_server *so_long)
-{
-	int		len;
-	int		n;
-	char	*ext;
-	char	*filename;
-
-	filename = so_long->map->file;
-	len = ft_strlen(filename);
-	ext = ".ber";
-	n = 4;
-	so_long->map->fd = open(filename, O_RDWR);
-	if (so_long->map->fd < 0)
-		return (ft_puterror(so_long, "File doesnt exist"));
-	while (n > 0 && filename[len - n] == *ext && filename[len - n] != '\0')
-	{
-		ext++;
-		n--;
-	}
-	if (n > 0)
-		return (ft_puterror(so_long, "Invalid extension"));
-	map_parse(so_long);
-	return (1);
-}
 
 /**
  * The map_parse() function ..
@@ -62,6 +34,33 @@ int	map_parse(t_server *so_long)
 		line = get_next_line(so_long->map->fd);
 	}
 	close(so_long->map->fd);
+	return (1);
+}
+
+/**
+ * The map_open() function ..
+ */
+int	map_open(t_server *so_long)
+{
+	int		len;
+	int		n;
+	char	*ext;
+	char	*filename;
+
+	filename = so_long->map->file;
+	len = ft_strlen(filename);
+	ext = ".ber";
+	n = 4;
+	so_long->map->fd = open(filename, O_RDWR);
+	if (so_long->map->fd < 0)
+		return (game_error(so_long, "File doesnt exist"));
+	while (n > 0 && filename[len - n] == *ext && filename[len - n] && *ext)
+	{
+		ext++;
+		n--;
+	}
+	if (n > 0)
+		return (game_error(so_long, "Invalid extension"));
 	return (1);
 }
 
