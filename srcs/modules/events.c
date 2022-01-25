@@ -6,12 +6,11 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 20:54:38 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 21:57:16 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-#include <stdio.h>
 
 /**
  * The g_key_events struct ...
@@ -39,7 +38,9 @@ int	events_loop(int keycode, t_server *so_long)
 		}
 		else
 		{
-			printf("[DEBUG] No bind on: %d \n", keycode);
+			ft_putstr_fd("[DEBUG] No bind on ", 0);
+			ft_putnbr_fd(keycode, 0);
+			ft_putchar_fd('\n', 0);
 		}
 		i++;
 	}
