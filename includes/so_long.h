@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:02:08 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 22:34:34 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,6 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <fcntl.h>
-
-enum {
-	ON_KEYDOWN = 2,
-	ON_KEYUP = 3,
-	ON_MOUSEDOWN = 4,
-	ON_MOUSEUP = 5,
-	ON_MOUSEMOVE = 6,
-	ON_EXPOSE = 12,
-	ON_DESTROY = 17
-};
 
 typedef struct s_map {
 	int		fd;
