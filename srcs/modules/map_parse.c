@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.c                                          :+:    :+:            */
+/*   map_parse.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:00:57 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/25 21:55:21 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+#include <get_next_line.h>
 
 /**
- * so_long ...
+ * The map_parse() function ..
  */
-int	main(int argc, char **argv)
+int	map_parse(t_server *so_long)
 {
-	t_server	so_long;
+	char	*line;
 
-	if (argc != 2)
-		return (game_error(&so_long, "No map specified."));
-	server_initialize(&so_long);
-	client_initialize(&so_long);
-	map_initialize(&so_long);
-	if (map_check(&so_long, argv[1]) == 1)
-		map_parse(&so_long);
-	game_start(&so_long);
-	mlx_hook(so_long.window, 2, (1L << 17), events_loop, &so_long);
-	mlx_loop(so_long.mlx);
+	line = get_next_line(so_long->map->fd);
+	while (line != NULL)
+	{
+		ft_putstr_fd(line, 0);
+		free(line);
+		line = get_next_line(so_long->map->fd);
+	}
+	close(so_long->map->fd);
+	return (1);
 }

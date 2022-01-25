@@ -31,7 +31,8 @@ SOURCE_FILES	=	utilities/color.c \
 					properties/server.c \
 					properties/client.c \
 					properties/map.c \
-					modules/map_parser.c \
+					modules/map_check.c \
+					modules/map_parse.c \
 					modules/events.c \
 					modules/game.c \
 					so_long.c
