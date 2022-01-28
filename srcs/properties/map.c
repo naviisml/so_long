@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:03:35 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:05:31 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,32 @@ void	map_initialize(t_server *so_long)
 }
 
 /**
+ * The map_deinitialize_structure() function ..
+ */
+static void map_deinitialize_structure(t_server *so_long)
+{
+	int	i;
+	int	n;
+
+	i = 0;
+	n = so_long->height;
+	while (i < n)
+	{
+		free(so_long->map->structure[i]);
+		i++;
+	}
+	free(so_long->map->structure);
+}
+
+/**
  * The map_initialize() function ..
  */
 void	map_deinitialize(t_server *so_long)
 {
+	if (so_long->map->spawnpos)
+		free(so_long->map->spawnpos);
 	if (so_long->map->structure != NULL)
-		free(so_long->map->structure);
-		// Free so_long->map->structure from back to start
+		map_deinitialize_structure(so_long);
 	if (so_long->map != NULL)
 		free(so_long->map);
 }
