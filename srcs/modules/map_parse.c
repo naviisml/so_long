@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 13:01:24 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:20:20 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /**
  * The g_map_tiles[] struct ..
  */
-t_map_tiles g_map_tiles[] = {
+t_map_tiles	g_map_tiles[] = {
 {'0', example_function},
 {'1', example_function},
 {'C', add_map_collectible},
@@ -34,7 +34,8 @@ static int	map_parse_tile(t_server *so_long, char c, int x, int y)
 	i = 0;
 	while (g_map_tiles[i].callback != NULL)
 	{
-		if (g_map_tiles[i].c == c) {
+		if (g_map_tiles[i].c == c)
+		{
 			g_map_tiles[i].callback(so_long, c, x, y);
 		}
 		i++;

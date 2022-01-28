@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 13:02:14 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:18:37 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ typedef struct s_map {
 	int		fd;
 	char	*fname;
 	int		collectibles;
-	int		*spawnpos;
+	int		*spawn;
+	int		*exit;
 	char	**structure;
 }			t_map;
 
@@ -48,7 +49,7 @@ typedef struct s_events {
 
 typedef struct s_map_tiles {
 	char	c;
-	void	(*callback)(t_server *, char, int, int);
+	int		(*callback)(t_server *, char, int, int);
 }			t_map_tiles;
 
 void	server_initialize(t_server *so_long);
@@ -68,9 +69,9 @@ int		get_red(int rgba);
 int		get_green(int rgba);
 int		get_blue(int rgba);
 
-void	example_function(t_server *so_long, char c, int x, int y);
-void	set_map_spawn(t_server *so_long, char c, int x, int y);
-void	set_map_exit(t_server *so_long, char c, int x, int y);
-void	add_map_collectible(t_server *so_long, char c, int x, int y);
+int		example_function(t_server *so_long, char c, int x, int y);
+int		set_map_spawn(t_server *so_long, char c, int x, int y);
+int		set_map_exit(t_server *so_long, char c, int x, int y);
+int		add_map_collectible(t_server *so_long, char c, int x, int y);
 
 #endif
