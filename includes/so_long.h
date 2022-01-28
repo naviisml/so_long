@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:34:34 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:02:14 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_map {
 	int		fd;
 	char	*fname;
 	int		collectibles;
-	int		**spawnpos;
+	int		*spawnpos;
 	char	**structure;
 }			t_map;
 
