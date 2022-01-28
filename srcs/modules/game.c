@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:27:34 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:02:39 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	game_start(t_server *so_long)
 	w = so_long->width;
 	h = so_long->height;
 	so_long->mlx = mlx_init();
-	so_long->window = mlx_new_window(so_long->mlx, w, h, "so_long");
+	so_long->window = mlx_new_window(so_long->mlx, (w * 50), (h * 50), "so_long");
 }
 
 /**
