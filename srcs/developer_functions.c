@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.c                                          :+:    :+:            */
+/*   developer_functions.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 11:43:17 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 11:46:17 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-int	debug_print_map(t_server *so_long);
-
 /**
- * so_long ...
+ * The debug_print_map() function ...
  */
-int	main(int argc, char **argv)
+int	debug_print_map(t_server *so_long)
 {
-	t_server	so_long;
+	int	x;
+	int	y;
 
-	if (argc != 2)
-		return (game_error(&so_long, "No map specified."));
-	server_initialize(&so_long);
-	client_initialize(&so_long);
-	map_initialize(&so_long);
-	if (map_check(&so_long, argv[1]) == 1)
-		map_parse(&so_long);
-	debug_print_map(&so_long);
-	game_start(&so_long);
-	mlx_hook(so_long.window, 2, (1L << 17), events_loop, &so_long);
-	mlx_loop(so_long.mlx);
+	x = 0;
+	while (so_long->map->structure[x] != NULL)
+	{
+		y = 0;
+		while (so_long->map->structure[x][y] != '\0')
+		{
+			ft_putchar_fd(so_long->map->structure[x][y], 0);
+			y++;
+		}
+		ft_putchar_fd('\n', 0);
+		x++;
+	}
+	return (1);
 }

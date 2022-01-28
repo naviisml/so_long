@@ -35,6 +35,7 @@ SOURCE_FILES	=	utilities/color.c \
 					modules/map_parse.c \
 					modules/events.c \
 					modules/game.c \
+					developer_functions.c \
 					so_long.c
 
 # Object Files...
