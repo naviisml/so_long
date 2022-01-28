@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 13:20:20 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:28:09 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,19 @@ int	map_parse(t_server *so_long)
 	so_long->height = x;
 	so_long->map->structure = ft_realloc_dp(so_long->map->structure, x);
 	close(so_long->map->fd);
+	return (1);
+}
+
+/**
+ * The map_check() function ..
+ */
+int	map_check(t_server *so_long)
+{
+	if (so_long->map->spawn == NULL)
+		return (game_error(so_long, "Map does not contain starting position."));
+	if (so_long->map->exit == NULL)
+		return (game_error(so_long, "Map does not contain exit position."));
+	if (so_long->map->collectibles <= 0)
+		return (game_error(so_long, "Map must contain atleast 1 collectible"));
 	return (1);
 }

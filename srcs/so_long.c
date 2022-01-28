@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 12:38:32 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:27:16 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ int	main(int argc, char **argv)
 	server_initialize(&so_long);
 	client_initialize(&so_long);
 	map_initialize(&so_long);
-	if (map_check(&so_long, argv[1]) != 1)
-		return (game_error(&so_long, "No map specified."));
+	if (map_open(&so_long, argv[1]) != 1)
+		return (0);
 	if (map_parse(&so_long) != 1)
+		return (0);
+	if (map_check(&so_long) != 1)
 		return (0);
 	game_start(&so_long);
 	debug_print_map(&so_long);

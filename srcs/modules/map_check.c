@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/25 22:24:38 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/28 13:25:58 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static int	map_exists(t_server *so_long, char *filename)
 }
 
 /**
- * The map_check() function ..
+ * The map_open() function ..
  */
-int	map_check(t_server *so_long, char *filename)
+int	map_open(t_server *so_long, char *filename)
 {
 	if (map_exists(so_long, filename) == 0)
 		return (game_error(so_long, "File doesnt exist"));
