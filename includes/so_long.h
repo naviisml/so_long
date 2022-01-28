@@ -46,6 +46,11 @@ typedef struct s_events {
 	int			(*callback)();
 }				t_events;
 
+typedef struct s_map_tiles {
+	char	c;
+	void	(*callback)(t_server *, char, int, int);
+}			t_map_tiles;
+
 void	server_initialize(t_server *so_long);
 void	client_initialize(t_server *so_long);
 void	client_deinitialize(t_server *so_long);
@@ -62,5 +67,10 @@ int		get_alpha(int rgba);
 int		get_red(int rgba);
 int		get_green(int rgba);
 int		get_blue(int rgba);
+
+void	example_function(t_server *so_long, char c, int x, int y);
+void	set_map_spawn(t_server *so_long, char c, int x, int y);
+void	set_map_exit(t_server *so_long, char c, int x, int y);
+void	add_map_collectible(t_server *so_long, char c, int x, int y);
 
 #endif
