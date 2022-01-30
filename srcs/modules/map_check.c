@@ -6,12 +6,11 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:26:06 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:35:01 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-#include <stdio.h>
 
 /**
  * The map_ext() function ..

@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:30:16 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:35:17 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,29 @@ int	map_parse(t_server *so_long)
 }
 
 /**
+ * The map_open() function ..
+ */
+int	map_check_walls(t_server *so_long)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strcmpchr(so_long->map->structure[0], '1') != 0
+		|| ft_strcmpchr(so_long->map->structure[so_long->height - 1], '1') != 0)
+		return (game_error(so_long, ERROR_WALLS));
+	while (so_long->map->structure[i])
+	{
+		if (ft_strlen(so_long->map->structure[i]) != (size_t)so_long->width)
+			return (game_error(so_long, ERROR_SIZE));
+		if (so_long->map->structure[i][0] != '1' ||
+			so_long->map->structure[i][so_long->width - 1] != '1')
+			return (game_error(so_long, ERROR_WALLS));
+		i++;
+	}
+	return (1);
+}
+
+/**
  * The map_check() function ..
  */
 int	map_check(t_server *so_long)
@@ -103,5 +126,7 @@ int	map_check(t_server *so_long)
 		return (game_error(so_long, ERROR_NO_EXIT_POS));
 	if (so_long->map->collectibles <= 0)
 		return (game_error(so_long, ERROR_NO_COLLECTIBLES));
+	if (map_check_walls(so_long) != 1)
+		return (0);
 	return (1);
 }
