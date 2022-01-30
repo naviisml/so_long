@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 08:33:59 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/20 12:20:39 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:22:09 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
+int		ft_strcmpchr(const char *str, const char c);
 
 #endif
