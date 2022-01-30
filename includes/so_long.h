@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 13:26:52 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:22:06 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <errors.h>
 
 typedef struct s_map {
 	int		fd;
