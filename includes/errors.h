@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:31:48 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:38:31 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@
 # define ERROR_NO_STARTING_POS	"The map must contain 1 starting position."
 # define ERROR_NO_EXIT_POS	"The map must contain 1 exit position."
 # define ERROR_NO_COLLECTIBLES	"The map must contain atleast 1 collectible."
+# define ERROR_NO_ARGS	"Invalid arguments; try './so_long <path/to/map>'"
 
 # define ERROR_NO_MEMORY	"No available memory."
 
 # define ERROR_FILE_NOT_FOUND	"The map file could not be read."
-# define ERRPR_FILE_EXTENSION	"The map file must be a '.ber' map"
+# define ERROR_FILE_EXTENSION	"The map file must be a '.ber' map"
 
 #endif

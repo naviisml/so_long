@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:35:01 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:38:53 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int	map_open(t_server *so_long, char *filename)
 	if (map_exists(so_long, filename) == 0)
 		return (game_error(so_long, ERROR_FILE_NOT_FOUND));
 	if (map_ext(filename) == 0)
-		return (game_error(so_long, ERRPR_FILE_EXTENSION));
+		return (game_error(so_long, ERROR_FILE_EXTENSION));
 	return (1);
 }
