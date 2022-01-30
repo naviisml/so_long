@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/28 13:28:09 by nismail       ########   odam.nl         */
+/*   Updated: 2022/01/30 01:30:16 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ static int	map_parse_tile(t_server *so_long, char c, int x, int y)
 	while (g_map_tiles[i].callback != NULL)
 	{
 		if (g_map_tiles[i].c == c)
-		{
-			g_map_tiles[i].callback(so_long, c, x, y);
-		}
+			return (g_map_tiles[i].callback(so_long, c, x, y));
 		i++;
 	}
-	return (1);
+	return (game_error(so_long, ERROR_TILES));
 }
 
 /**
@@ -55,7 +53,7 @@ static int	map_parse_line(t_server *so_long, char *line, int x)
 	y = 0;
 	so_long->map->structure[x] = (char *)malloc(len + 1);
 	if (!so_long->map->structure[x])
-		return (game_error(so_long, "No memory available."));
+		return (game_error(so_long, ERROR_NO_MEMORY));
 	while (line[y] != '\0' && line[y] != '\n')
 	{
 		so_long->map->structure[x][y] = line[y];
@@ -78,7 +76,7 @@ int	map_parse(t_server *so_long)
 	x = 0;
 	so_long->map->structure = (char **)malloc(sizeof(char **) * 100);
 	if (!so_long->map->structure)
-		return (game_error(so_long, "No memory available."));
+		return (game_error(so_long, ERROR_NO_MEMORY));
 	line = get_next_line(so_long->map->fd);
 	while (line != NULL)
 	{
@@ -100,10 +98,10 @@ int	map_parse(t_server *so_long)
 int	map_check(t_server *so_long)
 {
 	if (so_long->map->spawn == NULL)
-		return (game_error(so_long, "Map does not contain starting position."));
+		return (game_error(so_long, ERROR_NO_STARTING_POS));
 	if (so_long->map->exit == NULL)
-		return (game_error(so_long, "Map does not contain exit position."));
+		return (game_error(so_long, ERROR_NO_EXIT_POS));
 	if (so_long->map->collectibles <= 0)
-		return (game_error(so_long, "Map must contain atleast 1 collectible"));
+		return (game_error(so_long, ERROR_NO_COLLECTIBLES));
 	return (1);
 }
