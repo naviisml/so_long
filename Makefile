@@ -29,6 +29,7 @@ SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/color.c \
 					utilities/ft_strcmpchr.c \
 					utilities/get_next_line.c \
+					utilities/draw.c \
 					properties/server.c \
 					properties/client.c \
 					properties/map.c \

@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:20:23 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/01 11:48:23 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 int	set_map_spawn(t_server *so_long, char c, int x, int y)
 {
 	(void)c;
+
 	if (so_long->map->spawn)
 		return (game_error(so_long, ERROR_STARTING_POS));
 	so_long->map->spawn = malloc(2);

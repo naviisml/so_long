@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:22:06 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/01 11:29:53 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,15 @@ typedef struct s_map_tiles {
 	int		(*callback)(t_server *, char, int, int);
 }			t_map_tiles;
 
+typedef struct s_sprite {
+	char	*path;
+	void	*image;
+	int		width;
+	int		height;
+	int		x;
+	int		y;
+}			t_sprite;
+
 void	server_initialize(t_server *so_long);
 void	client_initialize(t_server *so_long);
 void	client_deinitialize(t_server *so_long);
@@ -70,6 +79,7 @@ int		get_alpha(int rgba);
 int		get_red(int rgba);
 int		get_green(int rgba);
 int		get_blue(int rgba);
+void	*draw_sprite(t_server *so_long, t_sprite *image);
 
 int		example_function(t_server *so_long, char c, int x, int y);
 int		set_map_spawn(t_server *so_long, char c, int x, int y);
