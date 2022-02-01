@@ -31,9 +31,7 @@ SOURCE_FILES	=	utilities/color.c \
 					utilities/get_next_line.c \
 					utilities/draw.c \
 					properties/server.c \
-					properties/client.c \
 					properties/map.c \
-					modules/client.c \
 					modules/map_check.c \
 					modules/map_parse.c \
 					modules/map_draw.c \

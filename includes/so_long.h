@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 13:40:59 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/01 13:58:16 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <fcntl.h>
 # include <errors.h>
 
+typedef struct s_server t_server;
+
 typedef struct s_sprite {
 	char	*path;
 	void	*image;
@@ -28,20 +30,19 @@ typedef struct s_sprite {
 	int		y;
 }			t_sprite;
 
-typedef struct s_map {
-	int		fd;
-	char	*fname;
-	int		collectibles;
-	int		*spawn;
-	int		*exit;
-	char	**structure;
-}			t_map;
+typedef struct s_map_tiles {
+	char	c;
+	int		(*callback)(t_server *, char, int, int);
+}			t_map_tiles;
 
-typedef struct s_client {
-	void	*sprite;
-	int		*tile;
-	int		collected;
-}			t_client;
+typedef struct s_map {
+	int			fd;
+	char		*fname;
+	int			collectibles;
+	int			*spawn;
+	int			*exit;
+	t_map_tiles	**tiles;
+}			t_map;
 
 typedef struct s_server {
 	void		*mlx;
@@ -49,7 +50,6 @@ typedef struct s_server {
 	int			width;
 	int			height;
 	t_map		*map;
-	t_client	*client;
 }				t_server;
 
 typedef struct s_events {
@@ -57,14 +57,7 @@ typedef struct s_events {
 	int			(*callback)();
 }				t_events;
 
-typedef struct s_map_tiles {
-	char	c;
-	int		(*callback)(t_server *, char, int, int);
-}			t_map_tiles;
-
 void	server_initialize(t_server *so_long);
-void	client_initialize(t_server *so_long);
-void	client_deinitialize(t_server *so_long);
 void	game_start(t_server *so_long);
 int		game_error(t_server *so_long, char *error);
 int		game_destroy(int keycode, t_server *so_long);
@@ -74,14 +67,16 @@ int		map_open(t_server *so_long, char *filename);
 int		map_parse(t_server *so_long);
 int		map_check(t_server *so_long);
 void	map_draw(t_server *so_long);
-void	client_draw(t_server *so_long);
-int		client_move_right(t_server *so_long, int x, int y);
 int		events_loop(int keycode, t_server *so_long);
+
+int		client_move_right(int keycode, t_server *so_long);
+
 int		rgba(int r, int g, int b, int a);
 int		get_alpha(int rgba);
 int		get_red(int rgba);
 int		get_green(int rgba);
 int		get_blue(int rgba);
+
 void	*draw_sprite(t_server *so_long, t_sprite *image);
 
 int		example_function(t_server *so_long, char c, int x, int y);
