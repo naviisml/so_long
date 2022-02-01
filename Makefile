@@ -33,11 +33,13 @@ SOURCE_FILES	=	utilities/color.c \
 					properties/server.c \
 					properties/client.c \
 					properties/map.c \
+					modules/client.c \
 					modules/map_check.c \
 					modules/map_parse.c \
 					modules/map_draw.c \
 					modules/events.c \
 					modules/game.c \
+					scripts/client_move.c \
 					scripts/example.c \
 					scripts/map_properties.c \
 					developer_functions.c \

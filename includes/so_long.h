@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 11:29:53 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/01 13:40:59 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 # include <fcntl.h>
 # include <errors.h>
 
+typedef struct s_sprite {
+	char	*path;
+	void	*image;
+	int		width;
+	int		height;
+	int		x;
+	int		y;
+}			t_sprite;
+
 typedef struct s_map {
 	int		fd;
 	char	*fname;
@@ -29,8 +38,8 @@ typedef struct s_map {
 }			t_map;
 
 typedef struct s_client {
-	int		x;
-	int		y;
+	void	*sprite;
+	int		*tile;
 	int		collected;
 }			t_client;
 
@@ -53,15 +62,6 @@ typedef struct s_map_tiles {
 	int		(*callback)(t_server *, char, int, int);
 }			t_map_tiles;
 
-typedef struct s_sprite {
-	char	*path;
-	void	*image;
-	int		width;
-	int		height;
-	int		x;
-	int		y;
-}			t_sprite;
-
 void	server_initialize(t_server *so_long);
 void	client_initialize(t_server *so_long);
 void	client_deinitialize(t_server *so_long);
@@ -74,6 +74,8 @@ int		map_open(t_server *so_long, char *filename);
 int		map_parse(t_server *so_long);
 int		map_check(t_server *so_long);
 void	map_draw(t_server *so_long);
+void	client_draw(t_server *so_long);
+int		client_move_right(t_server *so_long, int x, int y);
 int		events_loop(int keycode, t_server *so_long);
 int		rgba(int r, int g, int b, int a);
 int		get_alpha(int rgba);
