@@ -92,4 +92,4 @@ re: fclean all
 # Re-compile the program and run the script...
 dev: all
 	@echo "Executing \t$(NAME)"
-	@./$(NAME) ./resources/simple_map.ber
+	@./$(NAME) ./resources/maps/simple_map.ber
