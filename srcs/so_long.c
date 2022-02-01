@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:37:30 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/01 12:13:17 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int	main(int argc, char **argv)
 	game_start(&so_long);
 	debug_print_map(&so_long);
 	mlx_hook(so_long.window, 2, (1L << 17), events_loop, &so_long);
+	map_draw(&so_long);
 	mlx_loop(so_long.mlx);
 }

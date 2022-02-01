@@ -35,6 +35,7 @@ SOURCE_FILES	=	utilities/color.c \
 					properties/map.c \
 					modules/map_check.c \
 					modules/map_parse.c \
+					modules/map_draw.c \
 					modules/events.c \
 					modules/game.c \
 					scripts/example.c \

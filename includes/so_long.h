@@ -73,6 +73,7 @@ void	map_deinitialize(t_server *so_long);
 int		map_open(t_server *so_long, char *filename);
 int		map_parse(t_server *so_long);
 int		map_check(t_server *so_long);
+void	map_draw(t_server *so_long);
 int		events_loop(int keycode, t_server *so_long);
 int		rgba(int r, int g, int b, int a);
 int		get_alpha(int rgba);
