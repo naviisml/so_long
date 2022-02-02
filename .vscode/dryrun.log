@@ -1,0 +1,85 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/navi/Documents/GitHub/so_long'
+echo "Compiling \tlibft.a..."
+make all -C ./libraries/libft
+make[1]: Entering directory '/home/navi/Documents/GitHub/so_long/libraries/libft'
+echo "Building libft.a... (100%)"
+ar -rcs libft.a ./objects/./srcs/ft_isalpha.o ./objects/./srcs/ft_isdigit.o ./objects/./srcs/ft_isalnum.o ./objects/./srcs/ft_isascii.o ./objects/./srcs/ft_isprint.o ./objects/./srcs/ft_strlen.o ./objects/./srcs/ft_strrev.o ./objects/./srcs/ft_memset.o ./objects/./srcs/ft_bzero.o ./objects/./srcs/ft_memcpy.o ./objects/./srcs/ft_memmove.o ./objects/./srcs/ft_memchr.o ./objects/./srcs/ft_memcmp.o ./objects/./srcs/ft_strcpy.o ./objects/./srcs/ft_strlcpy.o ./objects/./srcs/ft_strlcat.o ./objects/./srcs/ft_toupper.o ./objects/./srcs/ft_tolower.o ./objects/./srcs/ft_strchr.o ./objects/./srcs/ft_strrchr.o ./objects/./srcs/ft_strcmp.o ./objects/./srcs/ft_strncmp.o ./objects/./srcs/ft_strnstr.o ./objects/./srcs/ft_atoi.o ./objects/./srcs/ft_calloc.o ./objects/./srcs/ft_realloc.o ./objects/./srcs/ft_strdup.o ./objects/./srcs/ft_substr.o ./objects/./srcs/ft_strjoin.o ./objects/./srcs/ft_strnjoin.o ./objects/./srcs/ft_strtrim.o ./objects/./srcs/ft_striteri.o ./objects/./srcs/ft_strmapi.o ./objects/./srcs/ft_split.o ./objects/./srcs/ft_itoa.o ./objects/./srcs/ft_floor.o ./objects/./srcs/ft_putchar_fd.o ./objects/./srcs/ft_putstr_fd.o ./objects/./srcs/ft_putendl_fd.o ./objects/./srcs/ft_putnbr_fd.o
+make[1]: Leaving directory '/home/navi/Documents/GitHub/so_long/libraries/libft'
+ 
+mkdir -p ./build
+mv ./libraries/libft/libft.a ./build/libft.a
+echo "Compiling \tlibmlx.dylib..."
+make -C ./libraries/minilibx_macos
+make[1]: Entering directory '/home/navi/Documents/GitHub/so_long/libraries/minilibx_macos'
+swiftc  -I. -parse-as-library -c interface.swift -o interface.o
+swiftc  -I. -parse-as-library -c mlx_image.swift -o mlx_image.o
+swiftc  -I. -parse-as-library -c mlx_window.swift -o mlx_window.o
+swiftc  -I. -parse-as-library -c mlx_init.swift -o mlx_init.o
+cc -O3   -c -o mlx_xpm.o mlx_xpm.c
+cc -O3   -c -o mlx_png.o mlx_png.c
+cc -O3   -c -o mlx_string_put.o mlx_string_put.c
+swiftc  -I. -o libmlx.dylib -emit-library interface.o mlx_image.o mlx_window.o mlx_init.o mlx_xpm.o mlx_png.o mlx_string_put.o -lz
+make[1]: Leaving directory '/home/navi/Documents/GitHub/so_long/libraries/minilibx_macos'
+make all -C ./libraries/minilibx_macos
+make[1]: Entering directory '/home/navi/Documents/GitHub/so_long/libraries/minilibx_macos'
+swiftc  -I. -parse-as-library -c interface.swift -o interface.o
+swiftc  -I. -parse-as-library -c mlx_image.swift -o mlx_image.o
+swiftc  -I. -parse-as-library -c mlx_window.swift -o mlx_window.o
+swiftc  -I. -parse-as-library -c mlx_init.swift -o mlx_init.o
+cc -O3   -c -o mlx_xpm.o mlx_xpm.c
+cc -O3   -c -o mlx_png.o mlx_png.c
+cc -O3   -c -o mlx_string_put.o mlx_string_put.c
+swiftc  -I. -o libmlx.dylib -emit-library interface.o mlx_image.o mlx_window.o mlx_init.o mlx_xpm.o mlx_png.o mlx_string_put.o -lz
+make[1]: Leaving directory '/home/navi/Documents/GitHub/so_long/libraries/minilibx_macos'
+mkdir -p ./build
+mv ./libraries/minilibx_macos/libmlx.dylib libmlx.dylib
+mkdir -p ./objects ./objects/srcs/utilities/
+echo "Compiling \tdraw.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/utilities/draw.c -o objects/./srcs/utilities/draw.o
+mkdir -p ./objects ./objects/srcs/properties/
+echo "Compiling \tserver.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/properties/server.c -o objects/./srcs/properties/server.o
+mkdir -p ./objects ./objects/srcs/properties/
+echo "Compiling \tclient.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/properties/client.c -o objects/./srcs/properties/client.o
+mkdir -p ./objects ./objects/srcs/properties/
+echo "Compiling \tmap.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/properties/map.c -o objects/./srcs/properties/map.o
+mkdir -p ./objects ./objects/srcs/modules/
+echo "Compiling \tclient.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/modules/client.c -o objects/./srcs/modules/client.o
+mkdir -p ./objects ./objects/srcs/modules/
+echo "Compiling \tmap_check.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/modules/map_check.c -o objects/./srcs/modules/map_check.o
+mkdir -p ./objects ./objects/srcs/modules/
+echo "Compiling \tmap_parse.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/modules/map_parse.c -o objects/./srcs/modules/map_parse.o
+mkdir -p ./objects ./objects/srcs/modules/
+echo "Compiling \tmap_draw.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/modules/map_draw.c -o objects/./srcs/modules/map_draw.o
+mkdir -p ./objects ./objects/srcs/modules/
+echo "Compiling \tevents.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/modules/events.c -o objects/./srcs/modules/events.o
+mkdir -p ./objects ./objects/srcs/modules/
+echo "Compiling \tgame.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/modules/game.c -o objects/./srcs/modules/game.o
+mkdir -p ./objects ./objects/srcs/scripts/
+echo "Compiling \tclient_move.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/scripts/client_move.c -o objects/./srcs/scripts/client_move.o
+mkdir -p ./objects ./objects/srcs/scripts/
+echo "Compiling \texample.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/scripts/example.c -o objects/./srcs/scripts/example.o
+mkdir -p ./objects ./objects/srcs/scripts/
+echo "Compiling \tmap_properties.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/scripts/map_properties.c -o objects/./srcs/scripts/map_properties.o
+mkdir -p ./objects ./objects/srcs/
+echo "Compiling \tdeveloper_functions.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/developer_functions.c -o objects/./srcs/developer_functions.o
+mkdir -p ./objects ./objects/srcs/
+echo "Compiling \tso_long.c (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ -I/usr/include -I./libraries/minilibx_macos -O3 -c srcs/so_long.c -o objects/./srcs/so_long.o
+echo "Building \tso_long... (100%)"
+gcc -Wall -Werror -Wextra -Imlx -Iincludes/ ./objects/./srcs/utilities/color.o ./objects/./srcs/utilities/ft_strcmpchr.o ./objects/./srcs/utilities/get_next_line.o ./objects/./srcs/utilities/draw.o ./objects/./srcs/properties/server.o ./objects/./srcs/properties/client.o ./objects/./srcs/properties/map.o ./objects/./srcs/modules/client.o ./objects/./srcs/modules/map_check.o ./objects/./srcs/modules/map_parse.o ./objects/./srcs/modules/map_draw.o ./objects/./srcs/modules/events.o ./objects/./srcs/modules/game.o ./objects/./srcs/scripts/client_move.o ./objects/./srcs/scripts/example.o ./objects/./srcs/scripts/map_properties.o ./objects/./srcs/developer_functions.o ./objects/./srcs/so_long.o ./build/libft.a libmlx.dylib -framework OpenGL -framework AppKit -o so_long
+make: Leaving directory '/home/navi/Documents/GitHub/so_long'
+ 

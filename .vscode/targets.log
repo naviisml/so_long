@@ -1,0 +1,565 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Feb  2 10:09:06 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/navi/Documents/GitHub/so_long
+# makefile
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/85
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:71131
+# makefile (from 'Makefile', line 4)
+AR_FLAGS = -rcs
+# makefile (from 'Makefile', line 14)
+LIBFT_FOLDER = ./libraries/libft
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from 'Makefile', line 53)
+.PHONY = $(NAME) $(LIBFT) all clean fclean re dev
+# makefile (from 'Makefile', line 28)
+SOURCE_FOLDER = ./srcs
+# automatic
+@F = $(notdir $@)
+# makefile (from 'Makefile', line 51)
+OBJECT_FILES = $(addprefix $(OBJECT_FOLDER)/, $(addprefix $(SOURCE_FOLDER)/, $(SOURCE_FILES:.c=.o)))
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+USERNAME = navi
+# environment
+MAKELEVEL := 0
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+_ = /snap/code/85/usr/share/code/code
+ 
+# environment
+MANAGERPID = 4654
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-68bf71e4-a1ec-48ef-8edf-411cf1b5d70d.sock
+# environment
+LC_NAME = nl_NL.UTF-8
+# environment
+VSCODE_CWD = /home/navi
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/85/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/an0n:@/tmp/.ICE-unix/4885,unix/an0n:/tmp/.ICE-unix/4885
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/navi/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/85
+# environment
+SNAP_VERSION = 899d46d8
+# makefile (from 'Makefile', line 3)
+AR = @ar
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+DISABLE_WAYLAND = 1
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=7e59fb04-a856-42f8-8316-6a9f10f26dfe&iid=7e59fb04-a856-42f8-8316-6a9f10f26dfe&sid=7e59fb04-a856-42f8-8316-6a9f10f26dfe","uploadToServer":true}
+# environment
+INVOCATION_ID = bd08722eccaa48789d8903ca650cee80
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/85/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# makefile (from 'Makefile', line 23)
+BUILD_FOLDER = ./build
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 49)
+EXTRA_FOLDERS = $(SOURCE_FOLDER)
+# makefile (from 'Makefile', line 50)
+OBJECT_FOLDER = ./objects
+# makefile (from 'Makefile', line 17)
+MINILIBX = libmlx.dylib
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 20621
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/navi/Documents/GitHub/so_long
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 4834
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# makefile (from 'Makefile', line 29)
+SOURCE_FILES = utilities/color.c utilities/ft_strcmpchr.c utilities/get_next_line.c utilities/draw.c properties/server.c properties/client.c properties/map.c modules/client.c modules/map_check.c modules/map_parse.c modules/map_draw.c modules/events.c modules/game.c scripts/client_move.c scripts/example.c scripts/map_properties.c developer_functions.c so_long.c
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/navi
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/navi/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+# environment
+LOGNAME = navi
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = Uch1aCNSVHIyl5LjBrLbiGF3S-HSvrN0tAC-MrPzVTDGtOLt5LUw
+# automatic
++F = $(notdir $+)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/navi/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LC_TIME = nl_NL.UTF-8
+# environment
+SNAP_REAL_HOME = /home/navi
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from 'Makefile', line 7)
+COMPILER_FLAGS = -Wall -Werror -Wextra -Imlx -Iincludes/
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/navi/snap/code/85
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 8)
+COMPILER_LIBRARIES = -framework OpenGL -framework AppKit
+# makefile (from 'Makefile', line 13)
+LIBFT = libft.a
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = navi
+# environment
+SNAP_REVISION = 85
+# environment
+LC_MONETARY = nl_NL.UTF-8
+# makefile
+.DEFAULT_GOAL := so_long
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 1)
+NAME = so_long
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = nl_NL.UTF-8
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 24)
+BUILD_FILES = $(addprefix $(BUILD_FOLDER)/, $(LIBFT)) $(MINILIBX)
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-5aa50aa3-1.63.2-main.sock
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+BREAKPAD_DUMP_LOCATION = /home/navi/.config/Code/exthost Crash Reports
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# environment
+LC_PAPER = nl_NL.UTF-8
+# environment
+LC_IDENTIFICATION = nl_NL.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# makefile (from 'Makefile', line 6)
+COMPILER = @gcc
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = Uch1aCNSVHIyl5LjBrLbiGF3S-HSvrN0tAC-MrPzVTDGtOLt5LUw
+# environment
+LC_NUMERIC = nl_NL.UTF-8
+# automatic
+<F = $(notdir $<)
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+LC_MEASUREMENT = nl_NL.UTF-8
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# makefile (from 'Makefile', line 18)
+MINILIBX_FOLDER = ./libraries/minilibx_macos
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LC_ADDRESS = nl_NL.UTF-8
+# environment
+LANG = C
+# environment
+VSCODE_PID = 20684
+# variable set hash-table stats:
+# Load=146/1024=14%, Rehash=0, Collisions=26/194=13%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 64769, inode 17173418): 19 files, no impossibilities.
+
+# 19 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+objects/%.o: %.c
+#  recipe to execute (from 'Makefile', line 57):
+	@mkdir -p $(OBJECT_FOLDER) $(addprefix $(OBJECT_FOLDER)/, $(dir $<))
+	@echo "Compiling \t$(notdir $<) (100%)"
+	@$(COMPILER) $(COMPILER_FLAGS) -I/usr/include -I$(MINILIBX_FOLDER) -O3 -c $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+objects/./srcs/utilities/draw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/modules/map_parse.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: so_long
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/12=0%
+
+# Not a target:
+objects/./srcs/modules/map_draw.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/utilities/ft_strcmpchr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/properties/map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/utilities/get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-02 10:06:50.619236008
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+objects/./srcs/properties/client.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libft.a:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+ 
+# automatic
+# @ := libft.a
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=4/20=20%
+#  recipe to execute (from 'Makefile', line 68):
+	@echo "Compiling \t$(LIBFT)..."
+	@$(MAKE) all -C $(LIBFT_FOLDER)
+	@mkdir -p $(BUILD_FOLDER)
+	@mv $(addprefix $(LIBFT_FOLDER)/, $(LIBFT)) $(addprefix $(BUILD_FOLDER)/, $(LIBFT))
+
+# Not a target:
+objects/./srcs/modules/game.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/utilities/color.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/scripts/example.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/modules/map_check.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 90):
+	@$(MAKE) fclean -C $(LIBFT_FOLDER)
+	@rm -rf $(NAME) $(BUILD_FOLDER) $(MINILIBX)
+
+# Not a target:
+objects/./srcs/properties/server.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dev: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 98):
+	@echo "Executing \t$(NAME)"
+	@./$(NAME) ./resources/maps/simple_map.ber
+
+# Not a target:
+objects/./srcs/so_long.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libmlx.dylib:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 75):
+	@echo "Compiling \t$(MINILIBX)..."
+	@$(MAKE) -C $(MINILIBX_FOLDER)
+	@$(MAKE) all -C $(MINILIBX_FOLDER)
+	@mkdir -p $(BUILD_FOLDER)
+	@mv $(addprefix $(MINILIBX_FOLDER)/, $(MINILIBX)) $(MINILIBX)
+
+re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 85):
+	@$(MAKE) clean -C $(LIBFT_FOLDER)
+	@rm -rf $(OBJECT_FILES) $(OBJECT_FOLDER)
+
+# Not a target:
+objects/./srcs/scripts/map_properties.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/modules/events.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/developer_functions.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+so_long: libft.a libmlx.dylib objects/./srcs/utilities/color.o objects/./srcs/utilities/ft_strcmpchr.o objects/./srcs/utilities/get_next_line.o objects/./srcs/utilities/draw.o objects/./srcs/properties/server.o objects/./srcs/properties/client.o objects/./srcs/properties/map.o objects/./srcs/modules/client.o objects/./srcs/modules/map_check.o objects/./srcs/modules/map_parse.o objects/./srcs/modules/map_draw.o objects/./srcs/modules/events.o objects/./srcs/modules/game.o objects/./srcs/scripts/client_move.o objects/./srcs/scripts/example.o objects/./srcs/scripts/map_properties.o objects/./srcs/developer_functions.o objects/./srcs/so_long.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/12=0%
+#  recipe to execute (from 'Makefile', line 63):
+	@echo "Building \t$(NAME)... (100%)"
+	$(COMPILER) $(COMPILER_FLAGS) $(OBJECT_FILES) $(BUILD_FILES) $(COMPILER_LIBRARIES) -o $(NAME)
+
+# Not a target:
+objects/./srcs/modules/client.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/./srcs/scripts/client_move.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=29/1024=3%, Rehash=0, Collisions=4/68=6%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 51 / storage = 910 B / avg = 17 B
+# current buf: size = 8162 B / used = 910 B / count = 51 / avg = 17 B
+
+# strcache performance: lookups = 72 / hit rate = 29%
+# hash-table stats:
+# Load=51/8192=1%, Rehash=0, Collisions=1/72=1%
+# Finished Make data base on Wed Feb  2 10:09:06 2022
+
+ 

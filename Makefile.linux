@@ -27,14 +27,17 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 # Source Files...
 SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/color.c \
+					utilities/ft_strcmpchr.c \
 					utilities/get_next_line.c \
+					utilities/draw.c \
 					properties/server.c \
-					properties/client.c \
 					properties/map.c \
 					modules/map_check.c \
 					modules/map_parse.c \
+					modules/map_draw.c \
 					modules/events.c \
 					modules/game.c \
+					scripts/client_move.c \
 					scripts/example.c \
 					scripts/map_properties.c \
 					developer_functions.c \
@@ -91,4 +94,4 @@ re: fclean all
 # Re-compile the program and run the script...
 dev: all
 	@echo "Executing \t$(NAME)"
-	@./$(NAME) resources/simple_map.ber
+	@./$(NAME) ./resources/maps/simple_map.ber
