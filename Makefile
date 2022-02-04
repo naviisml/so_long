@@ -27,7 +27,6 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 # Source Files...
 SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/color.c \
-					utilities/ft_strcmpchr.c \
 					utilities/get_next_line.c \
 					utilities/draw.c \
 					properties/server.c \
@@ -35,11 +34,11 @@ SOURCE_FILES	=	utilities/color.c \
 					modules/map_check.c \
 					modules/map_parse.c \
 					modules/map_draw.c \
-					modules/events.c \
 					modules/game.c \
-					scripts/client_move.c \
-					scripts/example.c \
-					scripts/map_properties.c \
+					events/client_move.c \
+					events/example.c \
+					events/map_properties.c \
+					events/events.c \
 					developer_functions.c \
 					so_long.c
 
