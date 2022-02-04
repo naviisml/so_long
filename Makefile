@@ -26,9 +26,9 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 
 # Source Files...
 SOURCE_FOLDER	=	./srcs
-SOURCE_FILES	=	utilities/color.c \
+SOURCE_FILES	=	utilities/colors.c \
+					utilities/textures.c \
 					utilities/get_next_line.c \
-					utilities/draw.c \
 					properties/server.c \
 					properties/map.c \
 					modules/map_check.c \
