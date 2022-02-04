@@ -16,7 +16,7 @@ int	debug_print_map(t_server *so_long);
 
 static int	render(t_server *so_long)
 {
-	map_draw(so_long);
+	sprite_draw(so_long, &so_long->map->player, so_long->map->player.size.x, so_long->map->player.size.y);
 	return (0);
 }
 
@@ -38,6 +38,10 @@ int	main(int argc, char **argv)
 	game_start(&so_long);
 	//debug_print_map(&so_long);
 	mlx_hook(so_long.window, 2, (1L << 17), events_loop, &so_long);
+	so_long.map->player = sprite_create(&so_long, "./resources/assets/character.xpm");
+	so_long.map->player.size.x = 10;
+	so_long.map->player.size.y = 10;
+	
 	mlx_loop_hook(so_long.mlx, render, &so_long);
 	mlx_loop(so_long.mlx);
 	return (0);
