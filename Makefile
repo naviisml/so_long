@@ -35,11 +35,9 @@ SOURCE_FILES	=	utilities/colors.c \
 					modules/map_parse.c \
 					modules/map_draw.c \
 					modules/game.c \
-					events/client_move.c \
 					events/example.c \
 					events/map_properties.c \
 					events/events.c \
-					developer_functions.c \
 					so_long.c
 
 # Object Files...
