@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 14:01:42 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/04 18:14:35 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
  */
 int	set_map_spawn(t_server *so_long, char c, int x, int y)
 {
-	(void)so_long;
-	(void)x;
-	(void)y;
 	(void)c;
+	so_long->map->spawn.x = x;
+	so_long->map->spawn.y = y;
 	return (1);
 }
 
@@ -29,10 +28,9 @@ int	set_map_spawn(t_server *so_long, char c, int x, int y)
  */
 int	set_map_exit(t_server *so_long, char c, int x, int y)
 {
-	(void)so_long;
-	(void)x;
-	(void)y;
 	(void)c;
+	so_long->map->exit.x = x;
+	so_long->map->exit.y = y;
 	return (1);
 }
 
