@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 13:59:59 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/04 18:19:53 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ int	main(int argc, char **argv)
 		return (0);
 	if (map_parse(&so_long) != 1)
 		return (0);
+	if (map_check(&so_long) != 1)
+		return (0);
 	game_start(&so_long);
 	//debug_print_map(&so_long);
-	mlx_hook(so_long.window, 2, (1L << 17), events_loop, &so_long);
+	mlx_hook(so_long.window, 2, (1L << 0), events_loop, &so_long);
+	mlx_hook(so_long.window, 17, (1L << 17), game_destroy, &so_long);
+
 	so_long.map->player = sprite_create(&so_long, "./resources/assets/character.xpm");
 	so_long.map->player.size.x = 10;
 	so_long.map->player.size.y = 10;
