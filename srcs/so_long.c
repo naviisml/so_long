@@ -6,17 +6,18 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 11:51:32 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 13:21:12 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-int	debug_print_map(t_server *so_long);
-
-static int	render(t_server *so_long)
+/**
+ * The render() function ...
+ */
+int	render(t_server *so_long)
 {
-	mlx_clear_window(so_long->mlx, so_long->window);
+	map_draw(so_long);
 	sprite_draw(so_long, &so_long->map->player, so_long->map->player.size.x, so_long->map->player.size.y);
 	return (0);
 }
@@ -39,14 +40,9 @@ int	main(int argc, char **argv)
 	if (map_check(&so_long) != 1)
 		return (0);
 	game_start(&so_long);
-	//debug_print_map(&so_long);
+	map_load(&so_long);
 	mlx_hook(so_long.window, 2, (1L << 0), events_loop, &so_long);
 	mlx_hook(so_long.window, 17, (1L << 17), game_destroy, &so_long);
-
-	so_long.map->player = sprite_create(&so_long, "./resources/assets/character.xpm");
-	so_long.map->player.size.x = 10;
-	so_long.map->player.size.y = 10;
-	
 	mlx_loop_hook(so_long.mlx, render, &so_long);
 	mlx_loop(so_long.mlx);
 	return (0);

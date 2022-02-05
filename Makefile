@@ -29,6 +29,7 @@ SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utilities/colors.c \
 					utilities/textures.c \
 					utilities/get_next_line.c \
+					utilities/mlx.c \
 					properties/server.c \
 					properties/map.c \
 					modules/map_check.c \
@@ -36,7 +37,8 @@ SOURCE_FILES	=	utilities/colors.c \
 					modules/map_draw.c \
 					modules/game.c \
 					events/example.c \
-					events/map_properties.c \
+					events/map.c \
+					events/player.c \
 					events/events.c \
 					so_long.c
 

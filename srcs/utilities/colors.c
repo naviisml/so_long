@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   color.c                                            :+:    :+:            */
+/*   colors.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 04:14:45 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/23 22:33:08 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 13:20:08 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
  * The rgba() function ...
  */
-int	rgba(int r, int g, int b, int a)
+unsigned int	rgba(int r, int g, int b, int a)
 {
 	return (a << 24 | r << 16 | g << 8 | b);
 }

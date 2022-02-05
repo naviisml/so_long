@@ -1,50 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   game.c                                             :+:    :+:            */
+/*   client_move.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 13:20:43 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 12:25:04 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 /**
- * The game_start() function ..
+ * The client_move_left() function ..
  */
-void	game_start(t_server *so_long)
-{
-	int	w;
-	int	h;
-
-	w = (so_long->width * 32);
-	h = (so_long->height * 32);
-	so_long->mlx = mlx_init();
-	so_long->window = mlx_new_window(so_long->mlx, w, h, "so_long");
-}
-
-/**
- * The game_error() function ..
- */
-int	game_error(t_server *so_long, char *message)
-{
-	ft_putstr_fd("Error\n", 0);
-	if (message != NULL)
-		ft_putstr_fd(message, 0);
-	game_destroy(0, so_long);
-	return (0);
-}
-
-/**
- * The game_destroy() function ..
- */
-int	game_destroy(int keycode, t_server *so_long)
+int	client_move_left(int keycode, t_server *so_long)
 {
 	(void)keycode;
-	(void)so_long;
-	exit(0);
-	return (0);
+	so_long->map->player.size.x -= (1 * 32);
+	return (1);
+}
+
+/**
+ * The client_move_right() function ..
+ */
+int	client_move_right(int keycode, t_server *so_long)
+{
+	(void)keycode;
+	so_long->map->player.size.x += (1 * 32);
+	return (1);
+}
+
+/**
+ * The client_move_up() function ..
+ */
+int	client_move_up(int keycode, t_server *so_long)
+{
+	(void)keycode;
+	so_long->map->player.size.y -= (1 * 32);
+	return (1);
+}
+
+/**
+ * The client_move_down() function ..
+ */
+int	client_move_down(int keycode, t_server *so_long)
+{
+	(void)keycode;
+	so_long->map->player.size.y += (1 * 32);
+	return (1);
 }

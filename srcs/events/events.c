@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/04 17:55:00 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 12:28:08 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
  */
 t_events	g_key_events[] = {
 {53, game_destroy},
-{2, example_walk},
+{0, client_move_left},
+{13, client_move_up},
+{1, client_move_down},
+{2, client_move_right},
 };
 
 /**
