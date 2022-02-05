@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 13:20:03 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 14:32:28 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int				get_red(int rgba);
 int				get_green(int rgba);
 int				get_blue(int rgba);
 t_sprite		sprite_create(t_server *server, char *path);
-void			sprite_draw(t_server *server, t_sprite *image, int x, int y);
+void			sprite_put(t_server *server, t_sprite *image, int x, int y);
+void			sprite_paint(t_server *server, t_sprite *image, int x, int y);
 void			sprite_destroy(t_server *server, t_sprite *image);
 void			sprite_pixel_put(t_sprite *image, int color, int x, int y);
 unsigned int	ft_mlx_pixel_get(t_sprite *texture, int x, int y);
@@ -70,9 +71,11 @@ typedef struct s_vector {
 
 typedef struct s_sprite {
 	void		*pointer;
-	char		*pixels;
-	int			bits_per_pixel;
-	int			bits_per_row;
+	char		*data;
+	int			width;
+	int			height;
+	int			bpp;
+	int			size_l;
 	int			endian;
 	t_vector	size;
 }				t_sprite;

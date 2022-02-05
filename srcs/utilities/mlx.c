@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 13:17:59 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 14:07:58 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@
  */
 unsigned int	ft_mlx_pixel_get(t_sprite *texture, int x, int y)
 {
-	return (*(unsigned int *)(texture->pixels + (x * texture->bits_per_pixel / 8 + y * texture->bits_per_row)));
+	return (*(unsigned int *)
+		(texture->data + (x * texture->bpp / 8 + y * texture->size_l)));
 }
 
 /*
  * The ft_mlx_pixel_draw() function ...
  */
-void	ft_mlx_pixel_draw(t_sprite *image, int color, int x, int y)
+void	ft_mlx_pixel_draw(t_sprite *texture, int color, int x, int y)
 {
 	char	*dst;
 
-	dst = image->pixels + (x * image->bits_per_pixel / 8 + y * image->bits_per_row);
+	dst = texture->data + (x * texture->bpp / 8 + y * texture->size_l);
 	*(unsigned int *)dst = color;
 }
