@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/04 18:12:58 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 11:50:00 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int		get_blue(int rgba);
 t_sprite	sprite_create(t_server *server, char *path);
 void		sprite_draw(t_server *server, t_sprite *image, int x, int y);
 void		sprite_destroy(t_server *server, t_sprite *image);
+void		sprite_pixel_put(t_sprite *image, int color, int x, int y);
 
 int		example_walk(int keycode, t_server *so_long);
 
