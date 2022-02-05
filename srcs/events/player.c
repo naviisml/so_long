@@ -21,6 +21,11 @@ static int	client_check(t_server *so_long, int x, int y)
 	{
 		return (0);
 	}
+	else if (so_long->map->structure[y][x] == 'C')
+	{
+		so_long->map->structure[y][x] = '0';
+		so_long->map->collectibles -= 1;
+	}
 	return (1);
 }
 
