@@ -91,7 +91,7 @@ typedef struct s_server {
 	int			width;
 	int			height;
 	t_map		*map;
-	t_sprite	main;
+	t_sprite	data;
 }				t_server;
 
 typedef struct s_map {

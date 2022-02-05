@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 13:20:28 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 14:29:25 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	map_draw(t_server *so_long)
 		while (so_long->map->structure[x][y] != '\0')
 		{
 			if (so_long->map->structure[x][y] == '1')
-				sprite_draw(so_long, &so_long->map->tile0, (y * 32), (x * 32));
+				sprite_paint(so_long, &so_long->map->tile0, (y * 32), (x * 32));
 			else
-				sprite_draw(so_long, &so_long->map->tile1, (y * 32), (x * 32));
+				sprite_paint(so_long, &so_long->map->tile1, (y * 32), (x * 32));
 			if (so_long->map->structure[x][y] == 'C')
-				sprite_draw(so_long, &so_long->map->collectible, (y * 32), (x * 32));
+				sprite_paint(so_long, &so_long->map->collectible, (y * 32), (x * 32));
 			y++;
 		}
 		x++;
