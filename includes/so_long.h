@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 14:32:28 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 15:37:11 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,9 @@ typedef struct s_map {
 	t_vector	exit;
 	t_sprite	player;
 	t_sprite	collectible;
-	t_sprite	tile0;
-	t_sprite	tile1;
+	t_sprite	tile;
+	t_sprite	wall;
+	t_sprite	door;
 }				t_map;
 
 typedef struct s_map_tiles {
