@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 16:02:42 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 16:06:17 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,34 @@
 # include <libft.h>
 # include <errors.h>
 
-typedef struct s_server t_server;
-typedef struct s_map t_map;
-typedef struct s_sprite t_sprite;
-typedef struct s_events t_events;
+typedef struct s_server	t_server;
+typedef struct s_map	t_map;
+typedef struct s_sprite	t_sprite;
+typedef struct s_events	t_events;
 
 // Engine...
-void	server_initialize(t_server *server);
-void	map_initialize(t_server *so_long);
-void	map_deinitialize(t_server *so_long);
-void	game_start(t_server *so_long);
-int		game_error(t_server *so_long, char *error);
-int		game_destroy(int keycode, t_server *so_long);
-void	map_load(t_server *so_long);
-int		map_open(t_server *so_long, char *filename);
-int		map_parse(t_server *so_long);
-int		map_check(t_server *so_long);
-void	map_draw(t_server *so_long);
-int		events_loop(int keycode, t_server *so_long);
+void			server_initialize(t_server *server);
+void			map_initialize(t_server *so_long);
+void			map_deinitialize(t_server *so_long);
+void			game_start(t_server *so_long);
+int				game_error(t_server *so_long, char *error);
+int				game_destroy(int keycode, t_server *so_long);
+void			map_load(t_server *so_long);
+int				map_open(t_server *so_long, char *filename);
+int				map_parse(t_server *so_long);
+int				map_check(t_server *so_long);
+void			map_draw(t_server *so_long);
+int				events_loop(int keycode, t_server *so_long);
 
 // Events...
-int		client_move_left(int keycode, t_server *so_long);
-int		client_move_right(int keycode, t_server *so_long);
-int		client_move_up(int keycode, t_server *so_long);
-int		client_move_down(int keycode, t_server *so_long);
-int		map_example(t_server *so_long, char c, int x, int y);
-int		set_map_spawn(t_server *so_long, char c, int x, int y);
-int		set_map_exit(t_server *so_long, char c, int x, int y);
-int		add_map_collectible(t_server *so_long, char c, int x, int y);
+int				client_move_left(int keycode, t_server *so_long);
+int				client_move_right(int keycode, t_server *so_long);
+int				client_move_up(int keycode, t_server *so_long);
+int				client_move_down(int keycode, t_server *so_long);
+int				map_example(t_server *so_long, char c, int x, int y);
+int				set_map_spawn(t_server *so_long, char c, int x, int y);
+int				set_map_exit(t_server *so_long, char c, int x, int y);
+int				add_map_collectible(t_server *so_long, char c, int x, int y);
 
 // Utilities...
 unsigned int	rgba(int r, int g, int b, int a);
