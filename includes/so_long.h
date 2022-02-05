@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 15:37:11 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 16:02:42 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		client_move_left(int keycode, t_server *so_long);
 int		client_move_right(int keycode, t_server *so_long);
 int		client_move_up(int keycode, t_server *so_long);
 int		client_move_down(int keycode, t_server *so_long);
-int		example_function(t_server *so_long, char c, int x, int y);
+int		map_example(t_server *so_long, char c, int x, int y);
 int		set_map_spawn(t_server *so_long, char c, int x, int y);
 int		set_map_exit(t_server *so_long, char c, int x, int y);
 int		add_map_collectible(t_server *so_long, char c, int x, int y);
@@ -102,7 +102,7 @@ typedef struct s_map {
 	t_vector	spawn;
 	t_vector	exit;
 	t_sprite	player;
-	t_sprite	collectible;
+	t_sprite	coin;
 	t_sprite	tile;
 	t_sprite	wall;
 	t_sprite	door;

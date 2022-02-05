@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 14:33:47 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 16:00:11 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_sprite	sprite_create(t_server *server, char *path)
 	int			height;
 
 	texture.pointer = mlx_xpm_file_to_image(server->mlx, path, &width, &height);
-	texture.data = mlx_get_data_addr(texture.pointer, &texture.bpp, &texture.size_l, &texture.endian);
+	texture.data = mlx_get_data_addr
+		(texture.pointer, &texture.bpp, &texture.size_l, &texture.endian);
 	texture.width = width;
 	texture.height = height;
 	return (texture);
