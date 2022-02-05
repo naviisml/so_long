@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/04 17:42:15 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 16:03:07 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
  * The g_map_tiles[] struct ..
  */
 t_map_tiles	g_map_tiles[] = {
-{'0', example_function},
-{'1', example_function},
+{'0', map_example},
+{'1', map_example},
 {'C', add_map_collectible},
 {'E', set_map_exit},
 {'P', set_map_spawn}

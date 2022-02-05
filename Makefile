@@ -36,7 +36,6 @@ SOURCE_FILES	=	utilities/colors.c \
 					modules/map_parse.c \
 					modules/map_draw.c \
 					modules/game.c \
-					events/example.c \
 					events/map.c \
 					events/player.c \
 					events/events.c \
