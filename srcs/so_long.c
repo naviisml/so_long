@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/04 18:19:53 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 11:51:32 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	debug_print_map(t_server *so_long);
 
 static int	render(t_server *so_long)
 {
+	mlx_clear_window(so_long->mlx, so_long->window);
 	sprite_draw(so_long, &so_long->map->player, so_long->map->player.size.x, so_long->map->player.size.y);
 	return (0);
 }
