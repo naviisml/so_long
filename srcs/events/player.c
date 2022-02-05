@@ -26,6 +26,11 @@ static int	client_check(t_server *so_long, int x, int y)
 		so_long->map->structure[y][x] = '0';
 		so_long->map->collectibles -= 1;
 	}
+	else if (so_long->map->structure[y][x] == 'E' && so_long->map->collectibles <= 0)
+	{
+		ft_putstr_fd("Congratz!\n", 0);
+		game_destroy(0, so_long);
+	}
 	return (1);
 }
 
