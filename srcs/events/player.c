@@ -17,6 +17,10 @@
  */
 static int	client_check(t_server *so_long, int x, int y)
 {
+	if (so_long->map->structure[y][x] == '1')
+	{
+		return (0);
+	}
 	return (1);
 }
 
