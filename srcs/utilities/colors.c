@@ -1,31 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcmpchr.c                                     :+:    :+:            */
+/*   colors.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 04:14:45 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/30 01:28:03 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 13:20:08 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include <so_long.h>
 
 /*
- * The ft_strcmpchr() functions lexicographically compare 
- * the null-terminated string str with char c.
- * 
- * This is subject to change, and therefor not included in libft (yet)
+ * The rgba() function ...
  */
-int	ft_strcmpchr(const char *str, const char c)
+unsigned int	rgba(int r, int g, int b, int a)
 {
-	int	i;
+	return (a << 24 | r << 16 | g << 8 | b);
+}
 
-	i = 0;
-	while (str[i] != '\0' && str[i] != c)
-	{
-		i++;
-	}
-	return ((int)str[i] - c);
+/*
+ * The get_alpha() function ...
+ */
+int	get_alpha(int rgba)
+{
+	return ((rgba >> 24) & 0xFF);
+}
+
+/*
+ * The get_red() function ...
+ */
+int	get_red(int rgba)
+{
+	return ((rgba >> 16) & 0xFF);
+}
+
+/*
+ * The get_green() function ...
+ */
+int	get_green(int rgba)
+{
+	return ((rgba >> 8) & 0xFF);
+}
+
+/*
+ * The get_blue() function ...
+ */
+int	get_blue(int rgba)
+{
+	return (rgba & 0xFF);
 }

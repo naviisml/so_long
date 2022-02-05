@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   client.c                                           :+:    :+:            */
+/*   map.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 13:39:20 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 12:37:35 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-void	client_draw(t_server *so_long)
+/**
+ * The set_map_spawn() function ..
+ */
+int	set_map_spawn(t_server *so_long, char c, int x, int y)
 {
-	t_sprite	*character;
-	void		*image;
+	(void)c;
+	so_long->map->spawn.x = x;
+	so_long->map->spawn.y = y;
+	return (1);
+}
 
-	character = malloc(sizeof(t_sprite));
-	character->path = "./resources/assets/character.png";
-	character->width = 32;
-	character->height = 32;
-	character->x = (so_long->client->x * 32);
-	character->y = (so_long->client->y * 32);
-	image = draw_sprite(so_long, character);
-	so_long->client->sprite = &image;
+/**
+ * The set_map_spawn() function ..
+ */
+int	set_map_exit(t_server *so_long, char c, int x, int y)
+{
+	(void)c;
+	so_long->map->exit.x = x;
+	so_long->map->exit.y = y;
+	return (1);
+}
+
+/**
+ * The add_map_collectible() function ..
+ */
+int	add_map_collectible(t_server *so_long, char c, int x, int y)
+{
+	(void)x;
+	(void)y;
+	(void)c;
+	so_long->map->collectibles += 1;
+	return (1);
 }

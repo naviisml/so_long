@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 11:38:49 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 14:08:09 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	game_start(t_server *so_long)
 	h = (so_long->height * 32);
 	so_long->mlx = mlx_init();
 	so_long->window = mlx_new_window(so_long->mlx, w, h, "so_long");
+	so_long->data.pointer = mlx_new_image(so_long->mlx, w, h);
+	so_long->data.data = mlx_get_data_addr(so_long->data.pointer, &so_long->data.bpp, &so_long->data.size_l, &so_long->data.endian);
+	so_long->data.width = w;
+	so_long->data.height = h;
 }
 
 /**
@@ -44,15 +48,7 @@ int	game_error(t_server *so_long, char *message)
 int	game_destroy(int keycode, t_server *so_long)
 {
 	(void)keycode;
-	if (so_long->mlx != NULL && so_long->window != NULL)
-	{
-		mlx_clear_window(so_long->mlx, so_long->window);
-		mlx_destroy_window(so_long->mlx, so_long->window);
-	}
-	if (so_long->map != NULL)
-		map_deinitialize(so_long);
-	if (so_long->client != NULL)
-		client_deinitialize(so_long);
+	(void)so_long;
 	exit(0);
 	return (0);
 }

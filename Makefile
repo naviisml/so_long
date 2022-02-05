@@ -26,23 +26,20 @@ BUILD_FILES		=	$(addprefix $(BUILD_FOLDER)/, $(LIBFT)) \
 
 # Source Files...
 SOURCE_FOLDER	=	./srcs
-SOURCE_FILES	=	utilities/color.c \
-					utilities/ft_strcmpchr.c \
+SOURCE_FILES	=	utilities/colors.c \
+					utilities/textures.c \
 					utilities/get_next_line.c \
-					utilities/draw.c \
+					utilities/mlx.c \
 					properties/server.c \
-					properties/client.c \
 					properties/map.c \
-					modules/client.c \
 					modules/map_check.c \
 					modules/map_parse.c \
 					modules/map_draw.c \
-					modules/events.c \
 					modules/game.c \
-					scripts/client_move.c \
-					scripts/example.c \
-					scripts/map_properties.c \
-					developer_functions.c \
+					events/example.c \
+					events/map.c \
+					events/player.c \
+					events/events.c \
 					so_long.c
 
 # Object Files...

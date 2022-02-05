@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   client_move.c                                      :+:    :+:            */
+/*   mlx.c                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/01 13:45:56 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 14:07:58 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
 /*
- * The client_move_right() function ...
+ * The ft_mlx_pixel_get() function ...
  */
-int	client_move_right(t_server *so_long, int x, int y)
+unsigned int	ft_mlx_pixel_get(t_sprite *texture, int x, int y)
 {
-	(void)x;
-	(void)y;
-	mlx_clear_window(so_long->mlx, so_long->window);
-	so_long->client->tile[1] = 2;
-	return (1);
+	return (*(unsigned int *)
+		(texture->data + (x * texture->bpp / 8 + y * texture->size_l)));
+}
+
+/*
+ * The ft_mlx_pixel_draw() function ...
+ */
+void	ft_mlx_pixel_draw(t_sprite *texture, int color, int x, int y)
+{
+	char	*dst;
+
+	dst = texture->data + (x * texture->bpp / 8 + y * texture->size_l);
+	*(unsigned int *)dst = color;
 }
