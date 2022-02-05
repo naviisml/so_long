@@ -17,8 +17,10 @@
  */
 int	client_move_left(int keycode, t_server *so_long)
 {
+	int	x;
 	(void)keycode;
-	so_long->map->player.size.x -= (1 * 32);
+	x = so_long->map->player.size.x - 1;
+	so_long->map->player.size.x = x;
 	return (1);
 }
 
@@ -27,8 +29,10 @@ int	client_move_left(int keycode, t_server *so_long)
  */
 int	client_move_right(int keycode, t_server *so_long)
 {
+	int	x;
 	(void)keycode;
-	so_long->map->player.size.x += (1 * 32);
+	x = so_long->map->player.size.x + 1;
+	so_long->map->player.size.x = x;
 	return (1);
 }
 
@@ -37,8 +41,10 @@ int	client_move_right(int keycode, t_server *so_long)
  */
 int	client_move_up(int keycode, t_server *so_long)
 {
+	int	y;
 	(void)keycode;
-	so_long->map->player.size.y -= (1 * 32);
+	y = so_long->map->player.size.y - 1;
+	so_long->map->player.size.y = y;
 	return (1);
 }
 
@@ -47,7 +53,9 @@ int	client_move_up(int keycode, t_server *so_long)
  */
 int	client_move_down(int keycode, t_server *so_long)
 {
+	int	y;
 	(void)keycode;
-	so_long->map->player.size.y += (1 * 32);
+	y = so_long->map->player.size.y + 1;
+	so_long->map->player.size.y = y;
 	return (1);
 }

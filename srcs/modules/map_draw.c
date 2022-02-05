@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 14:29:25 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/05 15:08:16 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	map_draw(t_server *so_long)
 void	map_load(t_server *so_long)
 {
 	so_long->map->player = sprite_create(so_long, "./resources/assets/character.xpm");
-	so_long->map->player.size.x = (so_long->map->spawn.x * 32);
-	so_long->map->player.size.y = (so_long->map->spawn.y * 32);
+	so_long->map->player.size.x = so_long->map->spawn.x;
+	so_long->map->player.size.y = so_long->map->spawn.y;
 	so_long->map->tile0 = sprite_create(so_long, "./resources/assets/tile0.xpm");
 	so_long->map->tile1 = sprite_create(so_long, "./resources/assets/tile1.xpm");
 	so_long->map->collectible = sprite_create(so_long, "./resources/assets/fish1.xpm");
