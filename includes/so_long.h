@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 16:06:17 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 11:57:23 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <libft.h>
 # include <errors.h>
+# include <time.h>
 
 typedef struct s_server	t_server;
 typedef struct s_map	t_map;
@@ -104,7 +105,8 @@ typedef struct s_map {
 	t_vector	exit;
 	t_sprite	player;
 	t_sprite	coin;
-	t_sprite	tile;
+	t_sprite	tile1;
+	t_sprite	tile2;
 	t_sprite	wall;
 	t_sprite	door;
 }				t_map;
