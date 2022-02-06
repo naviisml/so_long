@@ -6,11 +6,36 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 11:32:15 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 12:55:37 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+
+/**
+ * The game_print_moves() function ..
+ */
+void	game_print_moves(t_server *so_long)
+{
+	so_long->map->moves += 1;
+	ft_putstr_fd("Congratulations, you finished this level!\n", 0);
+	ft_putstr_fd("Total moves: ", 0);
+	ft_putnbr_fd(so_long->map->moves, 0);
+	ft_putchar_fd('\n', 0);
+}
+
+/**
+ * The game_print_move() function ..
+ */
+void	game_print_move(t_server *so_long, char *dir)
+{
+	so_long->map->moves += 1;
+	ft_putstr_fd("Player moved ", 0);
+	ft_putstr_fd(dir, 0);
+	ft_putstr_fd(", moves: ", 0);
+	ft_putnbr_fd(so_long->map->moves, 0);
+	ft_putchar_fd('\n', 0);
+}
 
 /**
  * The game_start() function ..

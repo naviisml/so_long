@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 11:57:23 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 12:52:56 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void			map_deinitialize_textures(t_server *so_long);
 void			game_start(t_server *so_long);
 int				game_error(t_server *so_long, char *error);
 int				game_destroy(int keycode, t_server *so_long);
+void			game_print_moves(t_server *so_long);
+void			game_print_move(t_server *so_long, char *dir);
 int				map_open(t_server *so_long, char *filename);
 int				map_parse(t_server *so_long);
 int				map_check(t_server *so_long);
@@ -101,6 +103,7 @@ typedef struct s_map {
 	char		*fname;
 	int			collectibles;
 	char		**structure;
+	int			moves;
 	t_vector	spawn;
 	t_vector	exit;
 	t_sprite	player;
