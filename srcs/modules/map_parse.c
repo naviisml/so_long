@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 16:03:07 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 13:23:27 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,9 @@ int	map_check_walls(t_server *so_long)
  */
 int	map_check(t_server *so_long)
 {
-	if (!so_long->map->spawn.x || !so_long->map->spawn.y)
+	if (so_long->map->spawn.x == -1 && so_long->map->spawn.y == -1)
 		return (game_error(so_long, ERROR_NO_STARTING_POS));
-	if (!so_long->map->exit.x || !so_long->map->exit.y)
+	if (so_long->map->exit.x == -1 && so_long->map->exit.y == -1)
 		return (game_error(so_long, ERROR_NO_EXIT_POS));
 	if (so_long->map->collectibles <= 0)
 		return (game_error(so_long, ERROR_NO_COLLECTIBLES));

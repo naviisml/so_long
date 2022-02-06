@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 13:12:18 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 13:22:29 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	map_initialize(t_server *so_long)
 	so_long->map->collectibles = 0;
 	so_long->map->moves = 0;
 	so_long->map->initialized = 0;
+	so_long->map->exit.x = -1;
+	so_long->map->exit.y = -1;
+	so_long->map->spawn.x = -1;
+	so_long->map->spawn.y = -1;
 }
 
 /**
