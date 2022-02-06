@@ -60,6 +60,7 @@ void	map_deinitialize_structure(t_server *so_long)
 			free(so_long->map->structure[i]);
 		i--;
 	}
+	free(so_long->map->structure);
 }
 
 /**
