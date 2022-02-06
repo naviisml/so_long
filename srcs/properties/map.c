@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 13:03:48 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 12:09:11 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,26 @@ void	map_initialize_textures(t_server *so_long)
 		(so_long, "./resources/assets/door-locked.xpm");
 }
 
+void	map_deinitialize_structure(t_server *so_long)
+{
+	int	i;
+
+	i = so_long->height;
+	while (i > 0)
+	{
+		if (so_long->map->structure[i] != NULL)
+			free(so_long->map->structure[i]);
+		i--;
+	}
+}
+
 /**
  * The map_initialize() function ..
  */
 void	map_deinitialize(t_server *so_long)
 {
+	if (so_long->map->structure)
+		map_deinitialize_structure(so_long);
 	if (so_long->map != NULL)
 		free(so_long->map);
 }
