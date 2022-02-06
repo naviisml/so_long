@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 12:09:11 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 12:43:55 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	map_initialize(t_server *so_long)
 void	map_initialize_textures(t_server *so_long)
 {
 	so_long->map->player = sprite_create
-		(so_long, "./resources/assets/character.xpm");
+		(so_long, "./resources/assets/character-3.xpm");
 	so_long->map->player.size.x = so_long->map->spawn.x;
 	so_long->map->player.size.y = so_long->map->spawn.y;
 	so_long->map->wall = sprite_create

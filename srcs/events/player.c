@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 15:56:43 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 12:43:01 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ int	client_move_left(int keycode, t_server *so_long)
 	y = so_long->map->player.size.y;
 	if (client_check(so_long, x, y) == 0)
 		return (1);
+	so_long->map->player = sprite_create
+			(so_long, "./resources/assets/character-4.xpm");
 	so_long->map->player.size.x = x;
+	so_long->map->player.size.y = y;
 	ft_putstr_fd("Walk left!\n", 0);
 	return (1);
 }
@@ -71,7 +74,10 @@ int	client_move_right(int keycode, t_server *so_long)
 	y = so_long->map->player.size.y;
 	if (client_check(so_long, x, y) == 0)
 		return (1);
+	so_long->map->player = sprite_create
+			(so_long, "./resources/assets/character-2.xpm");
 	so_long->map->player.size.x = x;
+	so_long->map->player.size.y = y;
 	ft_putstr_fd("Walk right!\n", 0);
 	return (1);
 }
@@ -89,6 +95,9 @@ int	client_move_up(int keycode, t_server *so_long)
 	y = so_long->map->player.size.y - 1;
 	if (client_check(so_long, x, y) == 0)
 		return (1);
+	so_long->map->player = sprite_create
+			(so_long, "./resources/assets/character-1.xpm");
+	so_long->map->player.size.x = x;
 	so_long->map->player.size.y = y;
 	ft_putstr_fd("Walk up!\n", 0);
 	return (1);
@@ -107,6 +116,9 @@ int	client_move_down(int keycode, t_server *so_long)
 	y = so_long->map->player.size.y + 1;
 	if (client_check(so_long, x, y) == 0)
 		return (1);
+	so_long->map->player = sprite_create
+			(so_long, "./resources/assets/character-3.xpm");
+	so_long->map->player.size.x = x;
 	so_long->map->player.size.y = y;
 	ft_putstr_fd("Walk down!\n", 0);
 	return (1);
