@@ -102,4 +102,10 @@ The maps used for this game must be made with the following rules in mind;
 1111111111111
 ```
 
+## Results
+
+**Score:** 100/100
+
+**Date:** 06-02-2022
+
 <div align=center>Made with tons of ☕ and ❤️ by <a href="https://github.com/naviisml">Navi</a></div>
