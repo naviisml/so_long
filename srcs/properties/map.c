@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 12:49:16 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 13:12:18 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	map_initialize(t_server *so_long)
 	so_long->map = malloc(sizeof(struct s_map));
 	so_long->map->collectibles = 0;
 	so_long->map->moves = 0;
+	so_long->map->initialized = 0;
 }
 
 /**
@@ -41,6 +42,7 @@ void	map_initialize_textures(t_server *so_long)
 		(so_long, "./resources/assets/collectible.xpm");
 	so_long->map->door = sprite_create
 		(so_long, "./resources/assets/door-locked.xpm");
+	so_long->map->initialized = 1;
 }
 
 void	map_deinitialize_structure(t_server *so_long)

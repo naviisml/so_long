@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 12:55:37 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 13:12:52 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,11 @@ int	game_destroy(int keycode, t_server *so_long)
 {
 	(void)keycode;
 	(void)so_long;
-	map_deinitialize_textures(so_long);
-	map_deinitialize(so_long);
+	if (so_long->map->initialized == 1)
+	{
+		map_deinitialize_textures(so_long);
+		map_deinitialize(so_long);
+	}
 	exit(0);
 	return (0);
 }

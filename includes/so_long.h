@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/06 12:52:56 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 13:11:51 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ typedef struct s_map {
 	t_sprite	tile2;
 	t_sprite	wall;
 	t_sprite	door;
+	int			initialized;
 }				t_map;
 
 typedef struct s_map_tiles {
