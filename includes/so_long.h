@@ -27,11 +27,12 @@ typedef struct s_events	t_events;
 // Engine...
 void			server_initialize(t_server *server);
 void			map_initialize(t_server *so_long);
+void			map_initialize_textures(t_server *so_long);
 void			map_deinitialize(t_server *so_long);
+void			map_deinitialize_textures(t_server *so_long);
 void			game_start(t_server *so_long);
 int				game_error(t_server *so_long, char *error);
 int				game_destroy(int keycode, t_server *so_long);
-void			map_load(t_server *so_long);
 int				map_open(t_server *so_long, char *filename);
 int				map_parse(t_server *so_long);
 int				map_check(t_server *so_long);

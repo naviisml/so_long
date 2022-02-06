@@ -36,19 +36,3 @@ void	map_draw(t_server *so_long)
 		x++;
 	}
 }
-
-void	map_load(t_server *so_long)
-{
-	so_long->map->player = sprite_create
-		(so_long, "./resources/assets/character.xpm");
-	so_long->map->player.size.x = so_long->map->spawn.x;
-	so_long->map->player.size.y = so_long->map->spawn.y;
-	so_long->map->wall = sprite_create
-		(so_long, "./resources/assets/wall.xpm");
-	so_long->map->tile = sprite_create
-		(so_long, "./resources/assets/tile.xpm");
-	so_long->map->coin = sprite_create
-		(so_long, "./resources/assets/collectible.xpm");
-	so_long->map->door = sprite_create
-		(so_long, "./resources/assets/door-locked.xpm");
-}

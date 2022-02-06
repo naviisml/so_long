@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 16:13:26 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 11:33:52 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 	if (map_check(&so_long) != 1)
 		return (0);
 	game_start(&so_long);
-	map_load(&so_long);
+	map_initialize_textures(&so_long);
 	mlx_hook(so_long.window, 2, (1L << 0), events_loop, &so_long);
 	mlx_hook(so_long.window, 17, (1L << 17), game_destroy, &so_long);
 	mlx_loop_hook(so_long.mlx, render, &so_long);

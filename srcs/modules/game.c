@@ -50,6 +50,7 @@ int	game_destroy(int keycode, t_server *so_long)
 {
 	(void)keycode;
 	(void)so_long;
+	map_deinitialize_textures(so_long);
 	exit(0);
 	return (0);
 }
