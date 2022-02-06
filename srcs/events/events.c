@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/23 22:12:14 by nismail       #+#    #+#                 */
-/*   Updated: 2022/02/05 12:28:08 by nismail       ########   odam.nl         */
+/*   Updated: 2022/02/06 13:22:01 by nismail       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,5 @@ int	events_loop(int keycode, t_server *so_long)
 		}
 		i++;
 	}
-	ft_putstr_fd("[DEBUG] No bind on ", 0);
-	ft_putnbr_fd(keycode, 0);
-	ft_putchar_fd('\n', 0);
 	return (1);
 }
